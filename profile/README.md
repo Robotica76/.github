@@ -2,7 +2,10 @@
 
 ## Quienes somos? 👋
 
-🙋‍♀️ El club de robotica ROBOTICA76, es una organizacion sin fines de lucro que organizados buscamos ayudar, colaborar y consolidar espacion de formacion en robotica, mini-robotica y conferencias.
+🙋‍♀️ El club de robotica ROBOTICA76, es una organizacion sin fines de lucro que organizados buscamos ayudar, colaborar y consolidar espacio de formacion en robotica, mini-robotica y conferencias.
+
+![image](https://github.com/Robotica76/.github/assets/57429237/0e776e3f-c5e1-42b4-8abc-1f0e1dae34ed)
+
 
 ## MISION 👓
 
