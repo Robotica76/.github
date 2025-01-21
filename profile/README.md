@@ -33,7 +33,9 @@
 ### Disposiciones Generales.
 
 El presente reglamento establece una normatividad para el uso del equipo, instalaciones y disposicion del tiempo del instructor.
+
 NOTA: Todo el equipo de robotica ha sido donado, por lo que al corto plazo no se considera ninguna adicion de nuevo equipo.
+
 ❗️La duracion del taller es de dos horas. Los dias Sabados.Con 10 minutos de tolerancia. El horario esta por definirse.
 
 ❗️Los alumnos trabajaran en tuplas o equipos. Con la finalidas de fortalecer el trabajo en equipo y comunicacion efectiva. Los equipos seran definidos por el instructor.
