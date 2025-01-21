@@ -27,6 +27,32 @@
 
 ✔️ Crear otros Club´s de Robótica en otras instituciones educativas.
 
+
+## Reglamento del taller:
+
+### Disposiciones Generales.
+
+El presente reglamento establece una normatividad para el uso del equipo, instalaciones y disposicion del tiempo del instructor.
+NOTA: Todo el equipo de robotica ha sido donado, por lo que al corto plazo no se considera ninguna adicion de nuevo equipo.
+❗️La duracion del taller es de dos horas. Los dias Sabados.Con 10 minutos de tolerancia. El horario esta por definirse.
+❗️Los alumnos trabajaran en tuplas o equipos. Con la finalidas de fortalecer el trabajo en equipo y comunicacion efectiva. Los equipos seran definidos por el instructor.
+❗️Podran hacer uso de los equipos e instalaciones aquellos estudiantes que hayan sido previamente seleccionados. La seleccion consiste en la solucion a un reto de logica, aritmetica y pensamiento critico. Se considera una respuesta a una explicacion detallada de su resultado.
+❗️Es responsabilidad del alumno mantener limpia y ordenada el area de trabajo y en orden los equipos y herramientas.
+❗️Considere que en robotica existen objetos como tornillos con tamaños menores a 1cm, por lo que seran responsables de su cuidado. En caso de perdida el alumno es responsable de proveer una reposicion del material perdido o dañado.
+❗️Se sugiere que cada alumno tenga su equipo de computo personal. En caso de no contar con ello, se revisara el caso de manera personal.
+❗️A la primera inasistencia, el alumno no podra continuar en el taller, debido a la continuidad de los temas. Las inastencias justificadas estan permitidas y se trataran de manera personal.
+
+### Disciplina
+
+❗️Queda prohibido el uso del telefono celular durante la sesion (Esta permitido si el instructor requiere el uso de alguna aplicacion con el fin de su interaccion con el robot)
+❗️Se debera mantener una conducta apropiada y respetuosa.
+❗️Queda prohibido llevarse el equipo o material sin autorizacion.
+
+### Funcionamiento
+
+❗️Antes de iniciar cualquier trabajo, los alumnos deberan revisar las condiciones en las que reciben las instalaciones, materiales y aparatos, dejandolo todo igual y en orden.
+En caso de existir un desperfecto, deberan reportarlo inmediatamente al responsable del area.
+
 <!--
 
 **Here are some ideas to get you started:**
@@ -37,3 +63,5 @@
 🍿 Fun facts - what does your team eat for breakfast?
 🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 -->
+
+
