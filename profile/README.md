@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://via.placeholder.com/800x200?text=Unete+de+nueva+cuenta+al+curso+online+de+Robotica76" alt="Robotica76 Course Banner">
+  <img src=![Image](https://github.com/user-attachments/assets/fdccc600-d2df-40c4-841e-354305894e19)>
 </p>
 
 ---
