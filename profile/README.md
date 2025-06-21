@@ -1,4 +1,4 @@
-![image](https://github.com/Robotica76/.github/assets/57429237/421cecfc-7653-4684-aeca-ad4eca5af3df)
+![Image](https://github.com/user-attachments/assets/53b2d852-0522-4dc4-b00f-0619fc4863f9)
 
 ## Quienes somos? 👋
 
