@@ -20,6 +20,8 @@ Es muy sencillo. Haz clic en el siguiente enlace para reincorporarte al curso y 
 
 Nuestras sesiones en vivo serán:
 
+(Empezamos martes 24 de Junio de 2025)
+
 Martes y Jueves a las 5:30 PM
 
 Asegúrate de marcar estas horas en tu calendario. ¡Te esperamos puntualmente para cada sesión llena de aprendizaje y diversión!
