@@ -8,7 +8,7 @@
 
 Estamos emocionados de invitarte nuevamente al curso online de **Robotica76**. Prepárate para seguir explorando el fascinante mundo de la robótica, aprender nuevas habilidades y conectar con una comunidad apasionada.
 
-### ¿Cómo unirte de nuevo?
+### ¿Cómo unirte?
 
 Es muy sencillo. Haz clic en el siguiente enlace para reincorporarte al curso y continuar tu aprendizaje:
 
