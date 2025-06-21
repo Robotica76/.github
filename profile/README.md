@@ -12,7 +12,7 @@ Estamos emocionados de invitarte nuevamente al curso online de **Robotica76**. P
 
 Es muy sencillo. Haz clic en el siguiente enlace para reincorporarte al curso y continuar tu aprendizaje:
 
-[**[Haz clic aquí para acceder a la clase de Robotica76]**]([https://example.com/robotica76-course-link](https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_NjlkMjZiOWItYjUwYi00YTgwLTg1OGEtM2ExYzc0NTllNzc4%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%2522ceb177bf-013b-49ab-8a9c-4abce32afc1e%2522%252c%2522Oid%2522%253a%2522e1308f86-b0c8-478f-8e8c-5c889a439261%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=e93b2070-0d88-4f82-aa10-c8858eda1c84&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true)) 
+[**[Haz clic aquí para acceder a la clase de Robotica76]**] ([https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_NjlkMjZiOWItYjUwYi00YTgwLTg1OGEtM2ExYzc0NTllNzc4%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%2522ceb177bf-013b-49ab-8a9c-4abce32afc1e%2522%252c%2522Oid%2522%253a%2522e1308f86-b0c8-478f-8e8c-5c889a439261%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=e93b2070-0d88-4f82-aa10-c8858eda1c84&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true])
 
 ⏰ ¡Horario del Curso!
 
