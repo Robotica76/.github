@@ -1,6 +1,4 @@
-<p align="center">
-  <img src=![Image](https://github.com/user-attachments/assets/fdccc600-d2df-40c4-841e-354305894e19)>
-</p>
+![Image](https://github.com/user-attachments/assets/fdccc600-d2df-40c4-841e-354305894e19)
 
 ---
 
