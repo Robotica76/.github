@@ -20,7 +20,7 @@ Es muy sencillo. Haz clic en el siguiente enlace para reincorporarte al curso y 
 
 Nuestras sesiones en vivo serán:
 
-Martes y Jueves a las 5:30 PM (Hora de tu zona horaria)
+Martes y Jueves a las 5:30 PM
 
 Asegúrate de marcar estas horas en tu calendario. ¡Te esperamos puntualmente para cada sesión llena de aprendizaje y diversión!
 
