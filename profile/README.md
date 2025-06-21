@@ -1,3 +1,31 @@
+<p align="center">
+  <img src="https://via.placeholder.com/800x200?text=Unete+de+nueva+cuenta+al+curso+online+de+Robotica76" alt="Robotica76 Course Banner">
+</p>
+
+---
+
+## ¡Te esperamos!
+
+¡Hola!
+
+Estamos emocionados de invitarte nuevamente al curso online de **Robotica76**. Prepárate para seguir explorando el fascinante mundo de la robótica, aprender nuevas habilidades y conectar con una comunidad apasionada.
+
+### ¿Cómo unirte de nuevo?
+
+Es muy sencillo. Haz clic en el siguiente enlace para reincorporarte al curso y continuar tu aprendizaje:
+
+[**[Haz clic aquí para acceder al curso de Robotica76]**](https://example.com/robotica76-course-link) 
+*(Reemplaza `https://example.com/robotica76-course-link` con el enlace real de tu curso)*
+
+---
+
+¡No te quedes atrás! Tu aventura en la robótica te espera.
+
+Saludos,
+
+El equipo de Robotica76
+
+
 ![Image](https://github.com/user-attachments/assets/53b2d852-0522-4dc4-b00f-0619fc4863f9)
 
 ## Quienes somos? 👋
