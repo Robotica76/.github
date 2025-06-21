@@ -23,6 +23,7 @@ Saludos,
 
 El equipo de Robotica76
 
+---
 
 ![Image](https://github.com/user-attachments/assets/53b2d852-0522-4dc4-b00f-0619fc4863f9)
 
