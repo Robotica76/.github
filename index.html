@@ -216,9 +216,125 @@
                 margin: 5px 0;
             }
         }
+
+        /* --- Facebook Feed Styling --- */
+        .facebook-section {
+            text-align: center; /* Center the Facebook plugin */
+        }
+
+        .fb-page {
+            /* Styles for the Facebook embed container */
+            margin: 20px auto;
+            border-radius: 8px;
+            overflow: hidden; /* Ensures rounded corners apply to iframe content */
+            box-shadow: 0 0 15px var(--shadow-glow), 0 0 25px rgba(0,192,255,0.2);
+            border: 1px solid var(--border-glow);
+            max-width: 500px; /* Limit width for better appearance */
+        }
+
+        /* --- Carousel Styling --- */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 300px; /* Fixed height for the carousel */
+            margin: 30px auto;
+            border-radius: 12px;
+            box-shadow: 0 0 20px var(--shadow-glow), inset 0 0 5px rgba(0,192,255,0.1);
+            border: 1px solid var(--border-glow);
+            background-color: rgba(20, 20, 20, 0.9);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.8s ease-in-out; /* Smooth slide transition */
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%; /* Each slide takes full width of container */
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Ensure text is visible over image */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Text shadow for readability */
+        }
+
+        .carousel-slide h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px var(--accent-cyan);
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .carousel-slide p {
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+
+        /* Carousel Navigation (CSS Only - Using hidden radio buttons) */
+        .carousel-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-dot:hover {
+            background-color: var(--accent-cyan);
+        }
+
+        /* Actual carousel logic (CSS only, using :checked and siblings) */
+        #slide1:checked ~ .carousel-track { transform: translateX(0); }
+        #slide2:checked ~ .carousel-track { transform: translateX(-100%); }
+        #slide3:checked ~ .carousel-track { transform: translateX(-200%); }
+        /* Add more for more slides */
+
+        /* Style checked dot */
+        #slide1:checked ~ .carousel-nav label:nth-child(1) .carousel-dot,
+        #slide2:checked ~ .carousel-nav label:nth-child(2) .carousel-dot,
+        #slide3:checked ~ .carousel-nav label:nth-child(3) .carousel-dot {
+            background-color: var(--accent-cyan);
+            box-shadow: 0 0 5px var(--accent-cyan);
+        }
+
+        /* Hide the radio inputs themselves */
+        .carousel-radio {
+            display: none;
+        }
+
+        /* Example slide backgrounds (replace with your actual images) */
+        #slide-content-1 { background-image: url('https://via.placeholder.com/800x300/007bff/ffffff?text=Robotics+Club+Projects'); }
+        #slide-content-2 { background-image: url('https://via.placeholder.com/800x300/00c0ff/ffffff?text=Meet+Our+Team'); }
+        #slide-content-3 { background-image: url('https://via.placeholder.com/800x300/004c99/ffffff?text=Upcoming+Events'); }
+
+
     </style>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=YOUR_APP_ID" nonce="YOUR_NONCE"></script>
+
     <header>
         <h1>Robotica76 Robotics Club</h1>
         <nav>
@@ -226,7 +342,9 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Mission & Vision</a></li>
-                <li><a href="#contact">Objectives</a></li>
+                <li><a href="#objectives">Objectives</a></li>
+                <li><a href="#carousel">Highlights</a></li>
+                <li><a href="#facebook-feed">Facebook</a></li>
             </ul>
         </nav>
     </header>
@@ -267,7 +385,7 @@
             <p>✔️ Fomentar el desarrollo tecnológico de la localidad con la participacion activa de los jovenes y escuelas locales, donde se demuestre el liderazgo y la iniciativa de nuestros equipos obteniendo destacados reconocimientos.</p>
         </div>
 
-        <div class="section" id="contact">
+        <div class="section" id="objectives">
             <h2>OBJETIVOS 🎯</h2>
             <ul>
                 <li>✔️ Consolidar una selección de Robótica representativa y competitiva.</li>
@@ -277,6 +395,62 @@
                 <li>✔️ Crear otros Club´s de Robótica en otras instituciones educativas.</li>
             </ul>
         </div>
+
+        ---
+
+        <div class="section" id="carousel">
+            <h2>Our Highlights 🌟</h2>
+            <div class="carousel-container">
+                <input type="radio" name="carousel-radio" id="slide1" class="carousel-radio" checked>
+                <input type="radio" name="carousel-radio" id="slide2" class="carousel-radio">
+                <input type="radio" type="radio" name="carousel-radio" id="slide3" class="carousel-radio">
+                <div class="carousel-track">
+                    <div class="carousel-slide" id="slide-content-1">
+                        <h3>Our Latest Projects</h3>
+                        <p>Explore the innovative robots and solutions our members have built!</p>
+                    </div>
+                    <div class="carousel-slide" id="slide-content-2">
+                        <h3>Meet Our Talented Team</h3>
+                        <p>Learn about the passionate minds behind Robotica76 and their achievements.</p>
+                    </div>
+                    <div class="carousel-slide" id="slide-content-3">
+                        <h3>Upcoming Events & Workshops</h3>
+                        <p>Don't miss out on our next hands-on robotics workshops and competitions.</p>
+                    </div>
+                    </div>
+
+                <div class="carousel-nav">
+                    <label for="slide1"><div class="carousel-dot"></div></label>
+                    <label for="slide2"><div class="carousel-dot"></div></label>
+                    <label for="slide3"><div class="carousel-dot"></div></label>
+                    </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9em; color: gray;">(Click the dots below to navigate the carousel)</p>
+        </div>
+
+        ---
+
+        <div class="section facebook-section" id="facebook-feed">
+            <h2>Connect with Us on Facebook! 🌐</h2>
+            <p>Stay updated with our latest news, events, and robotics adventures by following our Facebook page:</p>
+            <div class="fb-page"
+                data-href="https://www.facebook.com/people/Robotica76/100065498049321/"
+                data-tabs="timeline"
+                data-width="500"
+                data-height="500"
+                data-small-header="false"
+                data-adapt-container-width="true"
+                data-hide-cover="false"
+                data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/people/Robotica76/100065498049321/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/people/Robotica76/100065498049321/">Robotica76</a>
+                </blockquote>
+            </div>
+            <p style="font-size: 0.9em; color: var(--text-color);">
+                *(Note: The Facebook feed requires an internet connection and JavaScript to load. Some browser extensions might block it.)*
+            </p>
+        </div>
+
     </div>
 </body>
 </html>
