@@ -35,6 +35,7 @@
             background-repeat: no-repeat;
             background-position: center center;
             overflow-x: hidden;
+            font-size: 0.95em; /* Base font size for body */
         }
 
         /* --- Global Animations --- */
@@ -73,7 +74,7 @@
             letter-spacing: 4px; /* More spacing for elegance */
             margin-bottom: 15px;
             font-weight: 700;
-            font-size: 3em; /* Larger title */
+            font-size: 2.6em; /* Smaller title */
             text-transform: uppercase;
             animation: fadeIn 1s ease-out forwards;
         }
@@ -103,7 +104,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 400; /* Regular weight */
-            font-size: 0.95em;
+            font-size: 0.9em; /* Smaller nav links */
         }
 
         nav ul li a::before {
@@ -140,13 +141,13 @@
             margin-bottom: 25px;
             padding-bottom: 10px;
             font-weight: 600;
-            font-size: 2.2em; /* Adjusted size */
+            font-size: 2em; /* Smaller H2 */
             letter-spacing: 1px;
             border-bottom: 1px solid var(--border-subtle); /* Subtle border */
             animation: fadeIn 0.8s ease-out forwards;
         }
         h3 {
-             font-size: 1.6em;
+             font-size: 1.4em; /* Smaller H3 */
              margin-top: 30px;
              border-bottom: none;
              color: var(--text-light);
@@ -175,7 +176,7 @@
             color: var(--text-light);
             font-weight: 300;
             line-height: 1.8; /* More comfortable reading */
-            font-size: 1.05em;
+            font-size: 1em; /* Smaller body text */
         }
 
         ul {
@@ -190,7 +191,7 @@
             margin-bottom: 12px;
             color: var(--text-light);
             font-weight: 300;
-            font-size: 1.05em;
+            font-size: 1em; /* Smaller list items */
         }
 
         ul li::before {
@@ -254,13 +255,13 @@
             font-family: 'Montserrat', sans-serif;
             color: var(--text-light);
             text-shadow: 2px 2px 5px rgba(0,0,0,0.8); /* Stronger text shadow for legibility */
-            font-size: 2.2em;
+            font-size: 2em; /* Smaller carousel heading */
             margin-bottom: 15px;
             border-bottom: none;
         }
 
         .carousel-slide p {
-            font-size: 1.2em;
+            font-size: 1.1em; /* Smaller carousel body text */
             color: var(--text-light);
             font-weight: 400;
         }
@@ -310,19 +311,22 @@
 
         /* --- Responsive adjustments --- */
         @media (max-width: 768px) {
+            body {
+                font-size: 0.9em; /* Adjust base font for mobile */
+            }
             .container {
                 width: 95%;
                 padding: 10px;
             }
             h1 {
-                font-size: 2.2em;
-                letter-spacing: 2px;
+                font-size: 2em; /* Smaller H1 for mobile */
+                letter-spacing: 1px;
             }
             h2 {
-                font-size: 1.8em;
+                font-size: 1.6em; /* Smaller H2 for mobile */
             }
             h3 {
-                font-size: 1.3em;
+                font-size: 1.2em; /* Smaller H3 for mobile */
             }
             nav ul {
                 flex-direction: column;
@@ -338,7 +342,7 @@
                 height: 300px;
             }
             .carousel-slide h3 {
-                font-size: 1.8em;
+                font-size: 1.6em;
             }
             .carousel-slide p {
                 font-size: 0.95em;
@@ -404,7 +408,7 @@
         <div class="section">
             <h2>VISION 🔭</h2>
             <p>✔️ Fomentar el desarrollo tecnológico de la localidad con la participacion activa de los jovenes y escuelas locales, donde se demuestre el liderazgo y la iniciativa de nuestros equipos obteniendo destacados reconocimientos.</p>
-        </div>
+        < /div>
 
         <div class="section" id="objectives">
             <h2>OBJETIVOS 🎯</h2>
