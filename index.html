@@ -5,35 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotica76 Robotics Club</title>
     <style>
-        /* Using more neutral and modern sans-serif fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap'); /* For code-like elements */
+        /* Neutral, elegant sans-serif fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap');
 
         :root {
-            /* Glassmorphism Color Palette (adjusted for transparency and vibrancy) */
-            --background-base: #1a2a40; /* Dark blue-grey for main background */
-            --glass-blue: rgba(255, 255, 255, 0.1); /* Very light, transparent white for glass base */
-            --glass-border: rgba(255, 255, 255, 0.15); /* Slightly less transparent white for borders */
-            --text-light: #e0e0e0; /* Light text for contrast */
-            --text-dark: #f0f0f0; /* Even lighter text for headings */
-            --accent-glow-start: #00c0ff; /* Vibrant cyan */
-            --accent-glow-end: #007bff; /* Deeper blue for gradient/shadow mix */
-            --shadow-color: rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-            --highlight-color: rgba(255, 255, 255, 0.05); /* Subtle inner highlight */
+            /* Proto Homes inspired palette */
+            --background-dark: #0A0A0A; /* Very dark, near black */
+            --background-medium: #1C1C1C; /* Slightly lighter for sections */
+            --text-light: #F0F0F0; /* Off-white for general text */
+            --text-dark: #C0C0C0; /* Slightly darker for secondary text */
+            --accent-blue: #007BFF; /* A clean, modern blue */
+            --accent-hover: #00A3FF; /* Lighter blue for hover effects */
+            --border-subtle: rgba(255, 255, 255, 0.08); /* Very subtle white border */
+            --shadow-subtle: rgba(0, 0, 0, 0.4); /* Soft, contained shadow */
+            --transparent-bg: rgba(255, 255, 255, 0.03); /* Very slight white transparency */
         }
 
         body {
-            font-family: 'Open Sans', Arial, sans-serif;
-            line-height: 1.7; /* Slightly more spacious line height */
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            background-color: var(--background-base); /* Base background color */
+            background-color: var(--background-dark);
             color: var(--text-light);
-            /* A more dynamic background for glassmorphism */
-            background-image:
-                linear-gradient(45deg, #0f1c2e 0%, #1a2a40 50%, #0f1c2e 100%), /* Base gradient */
-                url('https://www.transparenttextures.com/patterns/clean-textile.png'); /* Subtle texture */
-            background-size: cover, auto;
+            /* A clean, expansive background similar to Proto Homes */
+            background-image: url('https://images.unsplash.com/photo-1518770660434-4b4700f10c0e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Industrial/tech background */
+            background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-position: center center;
@@ -41,85 +38,49 @@
         }
 
         /* --- Global Animations --- */
-        @keyframes pulse-glass {
-            0% { box-shadow: 0 0 10px var(--accent-glow-start); }
-            50% { box-shadow: 0 0 25px var(--accent-glow-start), 0 0 40px var(--accent-glow-end); }
-            100% { box-shadow: 0 0 10px var(--accent-glow-start); }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
-        @keyframes fadeInSlideUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        @keyframes slideInUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
 
         @keyframes robot-float {
             0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
             100% { transform: translateY(0) rotate(0deg); }
-        }
-
-
-        /* --- Glassmorphism Base Style --- */
-        .glassmorphism {
-            background: var(--glass-blue); /* Transparent background */
-            backdrop-filter: blur(10px) saturate(180%); /* Frosted glass effect */
-            -webkit-backdrop-filter: blur(10px) saturate(180%); /* Safari support */
-            border: 1px solid var(--glass-border); /* Subtle border */
-            border-radius: 16px; /* Rounded corners */
-            box-shadow: 0 8px 32px 0 var(--shadow-color); /* Soft shadow */
-            padding: 25px;
-            margin-bottom: 25px;
-            animation: fadeInSlideUp 0.7s ease-out forwards;
-            position: relative; /* For inner highlights */
-        }
-
-        .glassmorphism::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--highlight-color); /* Subtle inner glow/highlight */
-            border-radius: 16px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1; /* Behind content */
-        }
-
-        .glassmorphism:hover::before {
-            opacity: 1;
         }
 
 
         /* --- Header & Navigation --- */
         header {
-            background: rgba(10, 20, 30, 0.9); /* Darker, slightly transparent header */
-            color: #fff;
-            padding: 1.2rem 0;
+            background: rgba(0, 0, 0, 0.8); /* Slightly transparent dark header */
+            padding: 1.5rem 0; /* More padding */
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
-            border-bottom: 2px solid var(--accent-glow-start);
+            box-shadow: 0 2px 10px var(--shadow-subtle);
+            border-bottom: 1px solid var(--border-subtle); /* Clean, thin border */
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--text-dark); /* Lighter text for contrast */
-            text-shadow: 0 0 12px var(--accent-glow-start), 0 0 25px var(--accent-glow-end);
-            letter-spacing: 3px;
-            animation: pulse-glass 2.5s infinite alternate; /* Applied pulse animation */
+            color: var(--text-light);
+            letter-spacing: 4px; /* More spacing for elegance */
             margin-bottom: 15px;
             font-weight: 700;
-            font-size: 2.8em;
+            font-size: 3em; /* Larger title */
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-out forwards;
         }
 
         nav {
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent nav bar */
+            background: none; /* No explicit background, rely on header transparency */
             padding: 0.8rem 0;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.6);
         }
         nav ul {
             list-style: none;
@@ -129,187 +90,222 @@
             justify-content: center;
         }
         nav ul li {
-            margin: 0 25px;
+            margin: 0 28px; /* More spacing between items */
         }
         nav ul li a {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text-light);
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark); /* Slightly subdued text for navigation */
             text-decoration: none;
-            padding: 10px 18px;
+            padding: 10px 0; /* Padding for hover area */
             display: block;
             position: relative;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            font-weight: 600;
+            font-weight: 400; /* Regular weight */
+            font-size: 0.95em;
         }
 
         nav ul li a::before {
             content: '';
             position: absolute;
-            bottom: 5px; /* Lifted slightly */
+            bottom: 0;
             left: 50%;
             width: 0%;
             height: 2px;
-            background: linear-gradient(to right, var(--accent-glow-start), var(--accent-glow-end));
+            background-color: var(--accent-blue); /* Clean accent underline */
             transform: translateX(-50%);
             transition: width 0.3s ease-out;
         }
 
         nav ul li a:hover::before {
-            width: 80%; /* Expand to 80% width */
+            width: 100%; /* Full width underline on hover */
         }
 
         nav ul li a:hover {
-            color: var(--accent-glow-start);
-            text-shadow: 0 0 8px var(--accent-glow-start);
-            background-color: rgba(0, 192, 255, 0.1); /* Subtle hover background */
-            border-radius: 6px;
+            color: var(--text-light); /* Brighter on hover */
         }
 
         /* --- Container & Sections --- */
         .container {
-            width: 90%; /* Wider container */
-            max-width: 1100px; /* Larger max width */
-            margin: 30px auto;
-            padding: 20px;
-            box-sizing: border-box; /* Include padding in width */
+            width: 85%; /* Wider content area */
+            max-width: 1200px; /* Larger max width */
+            margin: 40px auto; /* More margin */
+            padding: 30px 0;
         }
 
         h2, h3 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--accent-glow-start);
-            text-shadow: 0 0 10px var(--accent-glow-start);
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(0,192,255,0.3);
-            padding-bottom: 8px;
-            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            font-weight: 600;
+            font-size: 2.2em; /* Adjusted size */
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-subtle); /* Subtle border */
+            animation: fadeIn 0.8s ease-out forwards;
         }
         h3 {
-             font-size: 1.5em; /* Adjust size for subheadings */
-             color: var(--text-dark);
-             text-shadow: none; /* No glow for smaller H3 */
+             font-size: 1.6em;
+             margin-top: 30px;
              border-bottom: none;
+             color: var(--text-light);
+             animation: fadeIn 0.8s ease-out forwards;
         }
 
 
         .section {
-            /* Now uses .glassmorphism for core styles */
-            margin-bottom: 35px;
+            background: var(--transparent-bg); /* Very subtle transparent background */
+            border: 1px solid var(--border-subtle); /* Thin, subtle border */
+            border-radius: 10px; /* Slightly less rounded for a crisper look */
+            box-shadow: 0 4px 15px var(--shadow-subtle); /* Soft, contained shadow */
+            padding: 40px; /* More internal padding */
+            margin-bottom: 40px; /* More space between sections */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover */
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .section:hover {
+            transform: translateY(-5px); /* Slight lift */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); /* Slightly more prominent shadow on hover */
         }
 
         p {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             color: var(--text-light);
-            font-weight: 300; /* Lighter font weight for body text */
+            font-weight: 300;
+            line-height: 1.8; /* More comfortable reading */
+            font-size: 1.05em;
         }
 
         ul {
             list-style: none;
             padding-left: 0;
+            margin-top: 25px;
         }
 
         ul li {
             position: relative;
-            padding-left: 30px; /* More space for custom bullet */
-            margin-bottom: 10px;
+            padding-left: 30px;
+            margin-bottom: 12px;
             color: var(--text-light);
             font-weight: 300;
+            font-size: 1.05em;
         }
 
         ul li::before {
-            content: '›'; /* More subtle tech-like bullet */
-            color: var(--accent-glow-start);
+            content: '—'; /* Simple dash for lists, as seen on Proto Homes */
+            color: var(--accent-blue);
             position: absolute;
             left: 0;
             top: 0;
             font-weight: bold;
-            font-size: 1.4em; /* Larger bullet */
-            text-shadow: 0 0 5px var(--accent-glow-start);
+            font-size: 1.1em;
         }
 
         a {
-            color: var(--accent-glow-start);
+            color: var(--accent-blue);
             text-decoration: none;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--accent-glow-end);
+            color: var(--accent-hover);
             text-decoration: underline;
-            text-shadow: 0 0 8px var(--accent-glow-end);
         }
 
         strong {
-            color: var(--accent-glow-start);
-            text-shadow: 0 0 5px var(--accent-glow-start);
-            font-weight: 600;
+            color: var(--accent-blue);
+            font-weight: 700;
         }
 
-        /* --- Facebook Feed Styling (Glassmorphism applied) --- */
-        .facebook-section .fb-page {
-            max-width: 550px; /* Slightly wider */
-            /* Inherits glassmorphism styles */
-            margin: 20px auto;
+        /* --- Facebook Feed Styling (Integrated with new section style) --- */
+        .facebook-section {
+            text-align: center;
         }
 
-        /* --- Carousel Styling (Glassmorphism applied) --- */
+        .fb-page {
+            max-width: 550px;
+            border-radius: 8px; /* Slightly less rounded */
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--shadow-subtle);
+            border: 1px solid var(--border-subtle);
+            margin: 25px auto 10px auto; /* More margin */
+        }
+
+        /* --- Carousel Styling (Integrated with new section style) --- */
         .carousel-container {
-            height: 350px; /* Taller carousel */
-            margin: 35px auto;
-            /* Inherits glassmorphism styles */
+            height: 400px; /* Taller carousel */
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--shadow-subtle);
+            border: 1px solid var(--border-subtle);
+            background-color: var(--transparent-bg); /* Match section transparency */
+            overflow: hidden;
         }
 
         .carousel-slide {
-            /* Styles for carousel content within glassmorphism */
-            background-color: rgba(0,0,0,0.2); /* Slight overlay for readability */
-            border-radius: 12px;
+            background-color: rgba(0,0,0,0.3); /* Dark overlay for text readability */
+            background-blend-mode: multiply; /* Darken images */
+            border-radius: 10px; /* Match container */
         }
 
         .carousel-slide h3 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--text-dark);
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7), 0 0 10px var(--accent-glow-start);
-            font-size: 2em; /* Larger heading */
+            color: var(--text-light);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8); /* Stronger text shadow for legibility */
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            border-bottom: none;
         }
 
         .carousel-slide p {
-            font-size: 1.2em; /* Larger text */
+            font-size: 1.2em;
             color: var(--text-light);
+            font-weight: 400;
         }
 
         .carousel-dot {
-            background-color: rgba(255, 255, 255, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 3px rgba(0,0,0,0.5);
         }
 
         #slide1:checked ~ .carousel-nav label:nth-child(1) .carousel-dot,
         #slide2:checked ~ .carousel-nav label:nth-child(2) .carousel-dot,
         #slide3:checked ~ .carousel-nav label:nth-child(3) .carousel-dot {
-            background-color: var(--accent-glow-start);
-            box-shadow: 0 0 8px var(--accent-glow-start), 0 0 15px var(--accent-glow-end);
+            background-color: var(--accent-blue);
+            box-shadow: 0 0 8px var(--accent-blue);
         }
+
+        /* Example slide backgrounds (replace with your actual high-res images) */
+        #slide-content-1 { background-image: url('https://images.unsplash.com/photo-1549721094-1a3b1a8d0b2f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
+        #slide-content-2 { background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
+        #slide-content-3 { background-image: url('https://images.unsplash.com/photo-1518706859599-281b6c00d456?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
+
 
         /* --- Floating Robot Animation --- */
         .robot-buddy {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px; /* Size of the robot image */
-            height: 80px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Robot_icon.svg/1200px-Robot_icon.svg.png'); /* Placeholder robot image */
+            bottom: 30px; /* Slightly higher */
+            right: 30px; /* Slightly more inward */
+            width: 90px; /* Slightly larger */
+            height: 90px;
+            background-image: url('https://www.svgrepo.com/show/382068/robot-bot-machine-technology.svg'); /* A cleaner, more minimalist robot SVG */
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            z-index: 9999; /* Ensure it's on top */
-            animation: robot-float 3s infinite ease-in-out; /* Apply float animation */
+            z-index: 9999;
+            animation: robot-float 3.5s infinite ease-in-out; /* Slower, more subtle float */
             cursor: pointer;
             transition: transform 0.2s ease;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6)); /* Soft shadow for the robot */
         }
 
         .robot-buddy:hover {
-            transform: scale(1.05) translateY(-5px); /* Slight jump on hover */
+            transform: scale(1.08) translateY(-10px);
         }
 
         /* --- Responsive adjustments --- */
@@ -319,8 +315,14 @@
                 padding: 10px;
             }
             h1 {
-                font-size: 2em;
-                letter-spacing: 1px;
+                font-size: 2.2em;
+                letter-spacing: 2px;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.3em;
             }
             nav ul {
                 flex-direction: column;
@@ -328,24 +330,24 @@
             nav ul li {
                 margin: 5px 0;
             }
-            .glassmorphism {
-                padding: 15px;
-                border-radius: 10px;
+            .section {
+                padding: 25px;
+                border-radius: 8px;
             }
             .carousel-container {
-                height: 250px; /* Adjust carousel height for smaller screens */
+                height: 300px;
             }
             .carousel-slide h3 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
             .carousel-slide p {
-                font-size: 1em;
+                font-size: 0.95em;
             }
             .robot-buddy {
-                width: 60px;
-                height: 60px;
-                bottom: 10px;
-                right: 10px;
+                width: 70px;
+                height: 70px;
+                bottom: 15px;
+                right: 15px;
             }
         }
     </style>
@@ -355,7 +357,7 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=YOUR_APP_ID" nonce="YOUR_NONCE"></script>
 
     <header>
-        <h1>Robotica76 Robotics Club</h1>
+        <h1>Robotica76</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -369,7 +371,7 @@
     </header>
 
     <div class="container">
-        <div class="section glassmorphism" id="home">
+        <div class="section" id="home">
             <h2>¡Te esperamos!</h2>
             <p>¡Hola!</p>
             <p>Estamos emocionados de invitarte nuevamente al curso online de Robotica76. Prepárate para seguir explorando el fascinante mundo de la robótica, aprender nuevas habilidades y conectar con una comunidad apasionada.</p>
@@ -389,22 +391,22 @@
             <p>El equipo de Robotica76</p>
         </div>
 
-        <div class="section glassmorphism" id="about">
+        <div class="section" id="about">
             <h2>Quienes somos? 👋</h2>
             <p>🙋‍♀️ El club de robotica ROBOTICA76, es una organizacion sin fines de lucro que organizados buscamos ayudar, colaborar y consolidar espacio de formacion en robotica, mini-robotica y conferencias.</p>
         </div>
 
-        <div class="section glassmorphism" id="services">
+        <div class="section" id="services">
             <h2>MISION 👓</h2>
             <p>✔️ Formar un grupo de trabajo unido para la capacitación y el fomento de la mini-robótica y robótica en el instituto, así como realizar proyectos de investigación e innovación que nos ayude a desarrollar nuestro potencial.</p>
         </div>
 
-        <div class="section glassmorphism">
+        <div class="section">
             <h2>VISION 🔭</h2>
             <p>✔️ Fomentar el desarrollo tecnológico de la localidad con la participacion activa de los jovenes y escuelas locales, donde se demuestre el liderazgo y la iniciativa de nuestros equipos obteniendo destacados reconocimientos.</p>
         </div>
 
-        <div class="section glassmorphism" id="objectives">
+        <div class="section" id="objectives">
             <h2>OBJETIVOS 🎯</h2>
             <ul>
                 <li>✔️ Consolidar una selección de Robótica representativa y competitiva.</li>
@@ -415,9 +417,9 @@
             </ul>
         </div>
 
-        <div class="section glassmorphism" id="carousel">
+        <div class="section" id="carousel">
             <h2>Our Highlights 🌟</h2>
-            <div class="carousel-container glassmorphism">
+            <div class="carousel-container">
                 <input type="radio" name="carousel-radio" id="slide1" class="carousel-radio" checked>
                 <input type="radio" name="carousel-radio" id="slide2" class="carousel-radio">
                 <input type="radio" type="radio" name="carousel-radio" id="slide3" class="carousel-radio">
@@ -442,10 +444,10 @@
                     <label for="slide3"><div class="carousel-dot"></div></label>
                     </div>
             </div>
-            <p style="text-align: center; font-size: 0.9em; color: gray; margin-top: 20px;">(Click the dots below to navigate the carousel)</p>
+            <p style="text-align: center; font-size: 0.9em; color: var(--text-dark); margin-top: 20px;">(Click the dots below to navigate the carousel)</p>
         </div>
 
-        <div class="section facebook-section glassmorphism" id="facebook-feed">
+        <div class="section facebook-section" id="facebook-feed">
             <h2>Connect with Us on Facebook! 🌐</h2>
             <p>Stay updated with our latest news, events, and robotics adventures by following our Facebook page:</p>
             <div class="fb-page"
@@ -461,7 +463,7 @@
                     <a href="https://www.facebook.com/people/Robotica76/100065498049321/">Robotica76</a>
                 </blockquote>
             </div>
-            <p style="font-size: 0.9em; color: var(--text-light); margin-top: 20px;">
+            <p style="font-size: 0.9em; color: var(--text-dark); margin-top: 20px;">
                 *(Note: The Facebook feed requires an internet connection and JavaScript to load. Some browser extensions might block it.)*
             </p>
         </div>
