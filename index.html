@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,14 +11,21 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #222; /* Dark background for technological feel */
+            color: #eee; /* Light text for contrast */
+            background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png'); /* Technological pattern */
+            background-size: cover;
+            background-attachment: fixed;
         }
         header {
-            background: #333;
+            background: rgba(0, 0, 0, 0.8); /* Slightly transparent dark background for header */
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: sticky; /* Make header stick to the top */
+            top: 0;
+            z-index: 1000; /* Ensure it stays on top of other content */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Subtle shadow for depth */
         }
         .container {
             width: 80%;
@@ -26,35 +34,76 @@
             padding: 20px 0;
         }
         h1, h2 {
-            color: #333;
+            color: #00e676; /* Bright green for headings */
+            text-shadow: 0 0 5px #00e676; /* Glowing effect */
         }
         a {
-            color: #007bff;
+            color: #61dafb; /* Light blue for links */
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
+            color: #2196f3; /* Slightly darker blue on hover */
         }
         .section {
-            background: #fff;
+            background: rgba(40, 40, 40, 0.9); /* Darker, slightly transparent sections */
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,230,118,0.3); /* Green glowing shadow */
+            border: 1px solid rgba(0,230,118,0.5); /* Green border */
         }
         ul {
             list-style: disc;
             margin-left: 20px;
+        }
+
+        /* Menu Bar Styles */
+        nav {
+            background: #1a1a1a; /* Even darker background for nav bar */
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Make menu items horizontal */
+            justify-content: center; /* Center the menu items */
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: block;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #00e676; /* Green on hover */
+            text-shadow: 0 0 8px #00e676; /* Glowing effect on hover */
+            background-color: rgba(0, 230, 118, 0.1); /* Subtle background on hover */
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Robotica76 Robotics Club</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
-        <div class="section">
+        <div class="section" id="home">
             <h2>¡Te esperamos!</h2>
             <p>¡Hola!</p>
             <p>Estamos emocionados de invitarte nuevamente al curso online de Robotica76. Prepárate para seguir explorando el fascinante mundo de la robótica, aprender nuevas habilidades y conectar con una comunidad apasionada.</p>
@@ -74,12 +123,12 @@
             <p>El equipo de Robotica76</p>
         </div>
 
-        <div class="section">
+        <div class="section" id="about">
             <h2>Quienes somos? 👋</h2>
             <p>🙋‍♀️ El club de robotica ROBOTICA76, es una organizacion sin fines de lucro que organizados buscamos ayudar, colaborar y consolidar espacio de formacion en robotica, mini-robotica y conferencias.</p>
         </div>
 
-        <div class="section">
+        <div class="section" id="services">
             <h2>MISION 👓</h2>
             <p>✔️ Formar un grupo de trabajo unido para la capacitación y el fomento de la mini-robótica y robótica en el instituto, así como realizar proyectos de investigación e innovación que nos ayuden a desarrollar nuestro potencial.</p>
         </div>
@@ -89,7 +138,7 @@
             <p>✔️ Fomentar el desarrollo tecnológico de la localidad con la participacion activa de los jovenes y escuelas locales, donde se demuestre el liderazgo y la iniciativa de nuestros equipos obteniendo destacados reconocimientos.</p>
         </div>
 
-        <div class="section">
+        <div class="section" id="contact">
             <h2>OBJETIVOS 🎯</h2>
             <ul>
                 <li>✔️ Consolidar una selección de Robótica representativa y competitiva.</li>
@@ -102,3 +151,4 @@
     </div>
 </body>
 </html>
+```
