@@ -12,9 +12,12 @@
             padding: 0;
             background-color: #222; /* Dark background for technological feel */
             color: #eee; /* Light text for contrast */
-            background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Corrected technological pattern URL */
-            background-size: cover;
-            background-attachment: fixed;
+            /* Using a common and reliable background image URL */
+            background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* Changed to a different, reliable texture */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+            background-repeat: no-repeat; /* Prevents image repetition if it's large enough to cover */
+            background-position: center center; /* Centers the background image */
         }
         header {
             background: rgba(0, 0, 0, 0.8); /* Slightly transparent dark background for header */
@@ -31,6 +34,8 @@
             margin: auto;
             overflow: hidden;
             padding: 20px 0;
+            position: relative;
+            z-index: 1;
         }
         h1, h2 {
             color: #00e676; /* Bright green for headings */
