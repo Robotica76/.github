@@ -66,13 +66,18 @@
             z-index: 1000;
             box-shadow: 0 2px 10px var(--shadow-subtle);
             border-bottom: 1px solid var(--border-subtle); /* Clean, thin border */
+            display: flex; /* Use flexbox for header content */
+            justify-content: space-between; /* Space out title and menu */
+            align-items: center;
+            padding-left: 20px; /* Add some padding to the sides */
+            padding-right: 20px;
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
             color: var(--text-light);
             letter-spacing: 4px; /* More spacing for elegance */
-            margin-bottom: 15px;
+            margin: 0; /* Remove default margin */
             font-weight: 700;
             font-size: 2.6em; /* Smaller title */
             text-transform: uppercase;
@@ -81,13 +86,13 @@
 
         nav {
             background: none; /* No explicit background, rely on header transparency */
-            padding: 0.8rem 0;
+            padding: 0; /* Removed padding here, handled by header */
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
+            display: flex; /* Desktop: horizontal menu */
             justify-content: center;
         }
         nav ul li {
@@ -126,6 +131,88 @@
         nav ul li a:hover {
             color: var(--text-light); /* Brighter on hover */
         }
+
+        /* --- Hamburger Menu Icon & Dropdown Styles --- */
+        .menu-toggle {
+            display: none; /* Hidden by default on desktop */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px; /* 3 lines, 5px height each, 3px spacing */
+            cursor: pointer;
+            z-index: 1001; /* Above navigation */
+            position: relative; /* For animation */
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+            transform-origin: center;
+        }
+
+        /* Animation for hamburger icon to 'X' */
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .mobile-nav {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 100%; /* Position below header */
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95); /* Darker background for mobile menu */
+            box-shadow: 0 5px 15px var(--shadow-subtle);
+            flex-direction: column;
+            z-index: 999;
+            padding: 10px 0;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+
+        .mobile-nav.active {
+            display: flex; /* Show when active */
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-nav ul {
+            flex-direction: column; /* Stack links vertically */
+            width: 100%;
+        }
+
+        .mobile-nav ul li {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .mobile-nav ul li a {
+            padding: 15px 0; /* More padding for mobile links */
+            font-size: 1.1em;
+            color: var(--text-light); /* Brighter text for mobile menu */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
+        }
+        .mobile-nav ul li:last-child a {
+            border-bottom: none;
+        }
+        .mobile-nav ul li a:hover {
+            background-color: rgba(0, 123, 255, 0.1); /* Subtle blue hover */
+        }
+
 
         /* --- Container & Sections --- */
         .container {
@@ -310,10 +397,22 @@
         }
 
         /* --- Responsive adjustments --- */
-        @media (max-width: 768px) {
-            body {
-                font-size: 0.9em; /* Adjust base font for mobile */
+        @media (max-width: 900px) { /* Adjust breakpoint for mobile menu */
+            header {
+                flex-direction: row; /* Keep elements in a row */
+                justify-content: space-between; /* Space out title and menu icon */
+                padding-right: 25px; /* Adjust padding for icon */
+                padding-left: 25px;
             }
+
+            nav ul {
+                display: none; /* Hide desktop menu on smaller screens */
+            }
+
+            .menu-toggle {
+                display: flex; /* Show hamburger icon */
+            }
+
             .container {
                 width: 95%;
                 padding: 10px;
@@ -327,12 +426,6 @@
             }
             h3 {
                 font-size: 1.2em; /* Smaller H3 for mobile */
-            }
-            nav ul {
-                flex-direction: column;
-            }
-            nav ul li {
-                margin: 5px 0;
             }
             .section {
                 padding: 25px;
@@ -362,7 +455,12 @@
 
     <header>
         <h1>Robotica76</h1>
-        <nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="desktopNav">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
@@ -373,6 +471,17 @@
             </ul>
         </nav>
     </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Mission & Vision</a></li>
+            <li><a href="#objectives">Objectives</a></li>
+            <li><a href="#carousel">Highlights</a></li>
+            <li><a href="#facebook-feed">Facebook</a></li>
+        </ul>
+    </div>
 
     <div class="container">
         <div class="section" id="home">
@@ -408,7 +517,7 @@
         <div class="section">
             <h2>VISION 🔭</h2>
             <p>✔️ Fomentar el desarrollo tecnológico de la localidad con la participacion activa de los jovenes y escuelas locales, donde se demuestre el liderazgo y la iniciativa de nuestros equipos obteniendo destacados reconocimientos.</p>
-        < /div>
+        </div>
 
         <div class="section" id="objectives">
             <h2>OBJETIVOS 🎯</h2>
@@ -475,5 +584,26 @@
     </div>
 
     <div class="robot-buddy"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileNav = document.getElementById('mobileNav');
+            const navLinks = mobileNav.querySelectorAll('a'); // Get all links in mobile nav
+
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+            });
+
+            // Close mobile menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
