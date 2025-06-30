@@ -234,11 +234,11 @@
             animation: fadeIn 0.8s ease-out forwards;
         }
         h3 {
-             font-size: 1.4em; /* Smaller H3 */
-             margin-top: 30px;
-             border-bottom: none;
-             color: var(--text-light);
-             animation: fadeIn 0.8s ease-out forwards;
+            font-size: 1.4em; /* Smaller H3 */
+            margin-top: 30px;
+            border-bottom: none;
+            color: var(--text-light);
+            animation: fadeIn 0.8s ease-out forwards;
         }
 
 
@@ -396,6 +396,67 @@
             transform: scale(1.08) translateY(-10px);
         }
 
+        /* --- Timeline Styling --- */
+        .timeline {
+            position: relative;
+            padding: 20px 0 20px 50px; /* Adjusted padding for timeline line */
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px; /* Position the vertical line */
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--accent-blue);
+        }
+
+        .timeline-event {
+            position: relative;
+            margin-bottom: 40px;
+            padding: 10px 0 10px 30px; /* Padding for content next to the line */
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: 12px; /* Position the circle on the line */
+            top: 15px; /* Adjust vertical alignment */
+            width: 18px;
+            height: 18px;
+            background-color: var(--accent-blue);
+            border-radius: 50%;
+            border: 2px solid var(--background-dark); /* Contrast with background */
+            z-index: 1;
+        }
+
+        .timeline-event h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: var(--text-light);
+            border-bottom: none;
+            padding-bottom: 0;
+            animation: none; /* No fade-in for individual event headings */
+        }
+
+        .timeline-event p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .timeline-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px var(--shadow-subtle);
+            display: block; /* Ensure it takes its own line */
+        }
+
+
         /* --- Responsive adjustments --- */
         @media (max-width: 900px) { /* Adjust breakpoint for mobile menu */
             header {
@@ -446,6 +507,17 @@
                 bottom: 15px;
                 right: 15px;
             }
+
+            /* Timeline adjustments for mobile */
+            .timeline {
+                padding-left: 30px; /* Reduce left padding */
+            }
+            .timeline::before {
+                left: 10px; /* Adjust line position */
+            }
+            .timeline-event::before {
+                left: 2px; /* Adjust circle position */
+            }
         }
     </style>
 </head>
@@ -466,7 +538,7 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Mission & Vision</a></li>
                 <li><a href="#objectives">Objectives</a></li>
-                <li><a href="#carousel">Highlights</a></li>
+                <li><a href="#history">History</a></li> <li><a href="#carousel">Highlights</a></li>
                 <li><a href="#facebook-feed">Facebook</a></li>
             </ul>
         </nav>
@@ -478,7 +550,7 @@
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Mission & Vision</a></li>
             <li><a href="#objectives">Objectives</a></li>
-            <li><a href="#carousel">Highlights</a></li>
+            <li><a href="#history">History</a></li> <li><a href="#carousel">Highlights</a></li>
             <li><a href="#facebook-feed">Facebook</a></li>
         </ul>
     </div>
@@ -530,6 +602,17 @@
             </ul>
         </div>
 
+        <div class="section" id="history">
+            <h2>Our History & Progress 📈</h2>
+            <p>Take a look at the key milestones and events in our journey!</p>
+            <div class="timeline">
+                <div class="timeline-event">
+                    <h3>June 2023: Para que sirven las matematicas?</h3>
+                    <p>We kicked off with an inspiring motivational talk titled "Para que sirven las matematicas?" to spark interest in the practical applications of mathematics in robotics.</p>
+                    <img src="https://images.unsplash.com/photo-1534723452445-568b2f96e499?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Motivational Talk on Mathematics" class="timeline-image">
+                </div>
+                </div>
+        </div>
         <div class="section" id="carousel">
             <h2>Our Highlights 🌟</h2>
             <div class="carousel-container">
