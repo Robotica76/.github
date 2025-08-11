@@ -1,3 +1,4 @@
+<!--
 ![Image](https://github.com/user-attachments/assets/fdccc600-d2df-40c4-841e-354305894e19)
 
 ---
@@ -35,6 +36,7 @@ Saludos,
 El equipo de Robotica76
 
 ---
+-->
 
 ![Image](https://github.com/user-attachments/assets/53b2d852-0522-4dc4-b00f-0619fc4863f9)
 
@@ -65,6 +67,7 @@ El equipo de Robotica76
 
 ✔️ Crear otros Club´s de Robótica en otras instituciones educativas.
 
+<!--
 
 ## Reglamento del taller:
 
@@ -101,7 +104,6 @@ NOTA: Todo el equipo de robotica ha sido donado, por lo que al corto plazo no se
 ❗️Antes de iniciar cualquier trabajo, los alumnos deberan revisar las condiciones en las que reciben las instalaciones, materiales y aparatos, dejandolo todo igual y en orden.
 En caso de existir un desperfecto, deberan reportarlo inmediatamente al responsable del area.
 
-<!--
 
 **Here are some ideas to get you started:**
 
