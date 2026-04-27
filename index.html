@@ -1,834 +1,300 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotica76 Robotics Club</title>
-    <style>
-        /* Neutral, elegant sans-serif fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Robotica76 – Club de Robótica</title>
 
-        :root {
-            /* Proto Homes inspired palette */
-            --background-dark: #0A0A0A; /* Very dark, near black */
-            --background-medium: #1C1C1C; /* Slightly lighter for sections */
-            --text-light: #F0F0F0; /* Off-white for general text */
-            --text-dark: #C0C0C0; /* Slightly darker for secondary text */
-            --accent-blue: #007BFF; /* A clean, modern blue */
-            --accent-hover: #00A3FF; /* Lighter blue for hover effects */
-            --border-subtle: rgba(255, 255, 255, 0.08); /* Very subtle white border */
-            --shadow-subtle: rgba(0, 0, 0, 0.4); /* Soft, contained shadow */
-            --transparent-bg: rgba(255, 255, 255, 0.03); /* Very slight white transparency */
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Lato', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-dark);
-            color: var(--text-light);
-            /* A clean, expansive background similar to Proto Homes */
-            background-image: url('https://images.unsplash.com/photo-1518770660434-4b4700f10c0e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Industrial/tech background */
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-position: center center;
-            overflow-x: hidden;
-            font-size: 0.95em; /* Base font size for body */
-        }
+<style>
+:root {
+  --bg-main: #f6f8fb;
+  --bg-card: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --primary: #2563eb;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --border-soft: #e5e7eb;
+}
 
-        /* --- Global Animations --- */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+* { box-sizing: border-box; }
 
-        @keyframes slideInUp {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.7;
+}
 
-        @keyframes robot-float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(1deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-        }
+/* ===== HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-soft);
+  z-index: 100;
+}
 
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        /* --- Header & Navigation --- */
-        header {
-            background: rgba(0, 0, 0, 0.8); /* Slightly transparent dark header */
-            padding: 1.5rem 0; /* More padding */
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px var(--shadow-subtle);
-            border-bottom: 1px solid var(--border-subtle); /* Clean, thin border */
-            display: flex; /* Use flexbox for header content */
-            justify-content: space-between; /* Space out title and menu */
-            align-items: center;
-            padding-left: 20px; /* Add some padding to the sides */
-            padding-right: 20px;
-        }
+nav h1 {
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 700;
+  color: var(--primary);
+}
 
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-light);
-            letter-spacing: 4px; /* More spacing for elegance */
-            margin: 0; /* Remove default margin */
-            font-weight: 700;
-            font-size: 2.6em; /* Smaller title */
-            text-transform: uppercase;
-            animation: fadeIn 1s ease-out forwards;
-        }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
 
-        nav {
-            background: none; /* No explicit background, rely on header transparency */
-            padding: 0; /* Removed padding here, handled by header */
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex; /* Desktop: horizontal menu */
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 28px; /* More spacing between items */
-        }
-        nav ul li a {
-            font-family: 'Lato', sans-serif;
-            color: var(--text-dark); /* Slightly subdued text for navigation */
-            text-decoration: none;
-            padding: 10px 0; /* Padding for hover area */
-            display: block;
-            position: relative;
-            transition: color 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 400; /* Regular weight */
-            font-size: 0.9em; /* Smaller nav links */
-        }
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+}
 
-        nav ul li a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0%;
-            height: 2px;
-            background-color: var(--accent-blue); /* Clean accent underline */
-            transform: translateX(-50%);
-            transition: width 0.3s ease-out;
-        }
+nav a:hover { color: var(--primary); }
 
-        nav ul li a:hover::before {
-            width: 100%; /* Full width underline on hover */
-        }
+/* ===== HERO ===== */
+.hero {
+  max-width: 1200px;
+  margin: auto;
+  padding: 90px 20px 70px;
+}
 
-        nav ul li a:hover {
-            color: var(--text-light); /* Brighter on hover */
-        }
+.hero h2 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+}
 
-        /* --- Hamburger Menu Icon & Dropdown Styles --- */
-        .menu-toggle {
-            display: none; /* Hidden by default on desktop */
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px; /* 3 lines, 5px height each, 3px spacing */
-            cursor: pointer;
-            z-index: 1001; /* Above navigation */
-            position: relative; /* For animation */
-        }
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 650px;
+}
 
-        .menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: var(--text-light);
-            border-radius: 2px;
-            transition: all 0.3s ease-in-out;
-            transform-origin: center;
-        }
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
 
-        /* Animation for hamburger icon to 'X' */
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-        .mobile-nav {
-            display: none; /* Hidden by default */
-            position: absolute;
-            top: 100%; /* Position below header */
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.95); /* Darker background for mobile menu */
-            box-shadow: 0 5px 15px var(--shadow-subtle);
-            flex-direction: column;
-            z-index: 999;
-            padding: 10px 0;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        }
+.btn-secondary {
+  border: 1px solid var(--border-soft);
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-main);
+}
 
-        .mobile-nav.active {
-            display: flex; /* Show when active */
-            opacity: 1;
-            transform: translateY(0);
-        }
+/* ===== SECTIONS ===== */
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-        .mobile-nav ul {
-            flex-direction: column; /* Stack links vertically */
-            width: 100%;
-        }
+.section-title {
+  font-size: 1.9rem;
+  margin-bottom: 30px;
+}
 
-        .mobile-nav ul li {
-            margin: 0;
-            width: 100%;
-            text-align: center;
-        }
+/* ===== CARDS ===== */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
 
-        .mobile-nav ul li a {
-            padding: 15px 0; /* More padding for mobile links */
-            font-size: 1.1em;
-            color: var(--text-light); /* Brighter text for mobile menu */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
-        }
-        .mobile-nav ul li:last-child a {
-            border-bottom: none;
-        }
-        .mobile-nav ul li a:hover {
-            background-color: rgba(0, 123, 255, 0.1); /* Subtle blue hover */
-        }
+.card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid var(--border-soft);
+}
 
+.card h3 {
+  margin-top: 0;
+  color: var(--primary);
+}
 
-        /* --- Container & Sections --- */
-        .container {
-            width: 85%; /* Wider content area */
-            max-width: 1200px; /* Larger max width */
-            margin: 40px auto; /* More margin */
-            padding: 30px 0;
-        }
+/* ===== TIMELINE ===== */
+.timeline {
+  border-left: 3px solid var(--primary);
+  padding-left: 30px;
+}
 
-        h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-light);
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            font-weight: 600;
-            font-size: 2em; /* Smaller H2 */
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--border-subtle); /* Subtle border */
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        h3 {
-            font-size: 1.4em; /* Smaller H3 */
-            margin-top: 30px;
-            border-bottom: none;
-            color: var(--text-light);
-            animation: fadeIn 0.8s ease-out forwards;
-        }
+.timeline-event {
+  margin-bottom: 30px;
+}
 
+.timeline-event h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
 
-        .section {
-            background: var(--transparent-bg); /* Very subtle transparent background */
-            border: 1px solid var(--border-subtle); /* Thin, subtle border */
-            border-radius: 10px; /* Slightly less rounded for a crisper look */
-            box-shadow: 0 4px 15px var(--shadow-subtle); /* Soft, contained shadow */
-            padding: 40px; /* More internal padding */
-            margin-bottom: 40px; /* More space between sections */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover */
-            animation: slideInUp 0.8s ease-out forwards;
-        }
+.timeline-event p {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+}
 
-        .section:hover {
-            transform: translateY(-5px); /* Slight lift */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); /* Slightly more prominent shadow on hover */
-        }
+/* ===== FACEBOOK ===== */
+.facebook-card {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 30px;
+  border: 1px solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        p {
-            margin-bottom: 20px;
-            color: var(--text-light);
-            font-weight: 300;
-            line-height: 1.8; /* More comfortable reading */
-            font-size: 1em; /* Smaller body text */
-        }
+.facebook-wrapper {
+  width: 100%;
+  max-width: 520px;
+}
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 25px;
-        }
+/* ===== FOOTER ===== */
+footer {
+  background: white;
+  border-top: 1px solid var(--border-soft);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted);
+}
 
-        ul li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 12px;
-            color: var(--text-light);
-            font-weight: 300;
-            font-size: 1em; /* Smaller list items */
-        }
-
-        ul li::before {
-            content: '—'; /* Simple dash for lists, as seen on Proto Homes */
-            color: var(--accent-blue);
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--accent-hover);
-            text-decoration: underline;
-        }
-
-        strong {
-            color: var(--accent-blue);
-            font-weight: 700;
-        }
-
-        /* --- Facebook Feed Styling (Integrated with new section style) --- */
-        .facebook-section {
-            text-align: center;
-        }
-
-        .fb-page {
-            max-width: 550px;
-            border-radius: 8px; /* Slightly less rounded */
-            overflow: hidden;
-            box-shadow: 0 4px 15px var(--shadow-subtle);
-            border: 1px solid var(--border-subtle);
-            margin: 25px auto 10px auto; /* More margin */
-        }
-
-        /* --- Carousel Styling (Integrated with new section style) --- */
-        .carousel-container {
-            height: 400px; /* Taller carousel */
-            margin: 40px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px var(--shadow-subtle);
-            border: 1px solid var(--border-subtle);
-            background-color: var(--transparent-bg); /* Match section transparency */
-            overflow: hidden;
-        }
-
-        .carousel-slide {
-            background-color: rgba(0,0,0,0.3); /* Dark overlay for text readability */
-            background-blend-mode: multiply; /* Darken images */
-            border-radius: 10px; /* Match container */
-        }
-
-        .carousel-slide h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-light);
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.8); /* Stronger text shadow for legibility */
-            font-size: 2em; /* Smaller carousel heading */
-            margin-bottom: 15px;
-            border-bottom: none;
-        }
-
-        .carousel-slide p {
-            font-size: 1.1em; /* Smaller carousel body text */
-            color: var(--text-light);
-            font-weight: 400;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 3px rgba(0,0,0,0.5);
-        }
-
-        #slide1:checked ~ .carousel-nav label:nth-child(1) .carousel-dot,
-        #slide2:checked ~ .carousel-nav label:nth-child(2) .carousel-dot,
-        #slide3:checked ~ .carousel-nav label:nth-child(3) .carousel-dot {
-            background-color: var(--accent-blue);
-            box-shadow: 0 0 8px var(--accent-blue);
-        }
-
-        /* Example slide backgrounds (replace with your actual high-res images) */
-        #slide-content-1 { background-image: url('https://images.unsplash.com/photo-1549721094-1a3b1a8d0b2f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
-        #slide-content-2 { background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
-        #slide-content-3 { background-image: url('https://images.unsplash.com/photo-1518706859599-281b6c00d456?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
-
-
-        /* --- Floating Robot Animation --- */
-        .robot-buddy {
-            position: fixed;
-            bottom: 30px; /* Slightly higher */
-            right: 30px; /* Slightly more inward */
-            width: 90px; /* Slightly larger */
-            height: 90px;
-            background-image: url('https://www.svgrepo.com/show/382068/robot-bot-machine-technology.svg'); /* A cleaner, more minimalist robot SVG */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            z-index: 9999;
-            animation: robot-float 3.5s infinite ease-in-out; /* Slower, more subtle float */
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6)); /* Soft shadow for the robot */
-        }
-
-        .robot-buddy:hover {
-            transform: scale(1.08) translateY(-10px);
-        }
-
-        /* --- Timeline Styling --- */
-        .timeline {
-            position: relative;
-            padding: 20px 0 20px 50px; /* Adjusted padding for timeline line */
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px; /* Position the vertical line */
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background-color: var(--accent-blue);
-        }
-
-        .timeline-event {
-            position: relative;
-            margin-bottom: 40px;
-            padding: 10px 0 10px 30px; /* Padding for content next to the line */
-        }
-
-        .timeline-event::before {
-            content: '';
-            position: absolute;
-            left: 12px; /* Position the circle on the line */
-            top: 15px; /* Adjust vertical alignment */
-            width: 18px;
-            height: 18px;
-            background-color: var(--accent-blue);
-            border-radius: 50%;
-            border: 2px solid var(--background-dark); /* Contrast with background */
-            z-index: 1;
-        }
-
-        .timeline-event h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.5em;
-            color: var(--text-light);
-            border-bottom: none;
-            padding-bottom: 0;
-            animation: none; /* No fade-in for individual event headings */
-        }
-
-        .timeline-event p {
-            margin-bottom: 10px;
-            font-size: 0.95em;
-        }
-
-        .timeline-image {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px var(--shadow-subtle);
-            display: block; /* Ensure it takes its own line */
-        }
-
-
-        /* --- Responsive adjustments --- */
-        @media (max-width: 900px) { /* Adjust breakpoint for mobile menu */
-            header {
-                flex-direction: row; /* Keep elements in a row */
-                justify-content: space-between; /* Space out title and menu icon */
-                padding-right: 25px; /* Adjust padding for icon */
-                padding-left: 25px;
-            }
-
-            nav ul {
-                display: none; /* Hide desktop menu on smaller screens */
-            }
-
-            .menu-toggle {
-                display: flex; /* Show hamburger icon */
-            }
-
-            .container {
-                width: 95%;
-                padding: 10px;
-            }
-            h1 {
-                font-size: 2em; /* Smaller H1 for mobile */
-                letter-spacing: 1px;
-            }
-            h2 {
-                font-size: 1.6em; /* Smaller H2 for mobile */
-            }
-            h3 {
-                font-size: 1.2em; /* Smaller H3 for mobile */
-            }
-            .section {
-                padding: 25px;
-                border-radius: 8px;
-            }
-            .carousel-container {
-                height: 300px;
-            }
-            .carousel-slide h3 {
-                font-size: 1.6em;
-            }
-            .carousel-slide p {
-                font-size: 0.95em;
-            }
-            .robot-buddy {
-                width: 70px;
-                height: 70px;
-                bottom: 15px;
-                right: 15px;
-            }
-
-            /* Timeline adjustments for mobile */
-            .timeline {
-                padding-left: 30px; /* Reduce left padding */
-            }
-            .timeline::before {
-                left: 10px; /* Adjust line position */
-            }
-            .timeline-event::before {
-                left: 2px; /* Adjust circle position */
-            }
-        }
-    </style>
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .hero h2 { font-size: 2rem; }
+  nav ul { display: none; }
+}
+</style>
 </head>
+
 <body>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=YOUR_APP_ID" nonce="YOUR_NONCE"></script>
 
-    <header>
-        <h1>Robotica76</h1>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav id="desktopNav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Nosotros</a></li>
-                <li><a href="#services">Mison & Vision</a></li>
-                <li><a href="#objectives">Objectivos</a></li>
-                <li><a href="#history">Historia</a></li> <li><a href="#carousel">Highlights</a></li>
-                <li><a href="#facebook-feed">Facebook</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+ src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
 
-    <div class="mobile-nav" id="mobileNav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Mission & Vision</a></li>
-            <li><a href="#objectives">Objectives</a></li>
-            <li><a href="#history">History</a></li> <li><a href="#carousel">Highlights</a></li>
-            <li><a href="#facebook-feed">Facebook</a></li>
-        </ul>
+<header>
+  <nav>
+    <h1>Robotica76</h1>
+    <ul>
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#history">Historia</a></li>
+      <li><a href="#facebook">Facebook</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Formando jóvenes en robótica, programación y tecnología 🤖</h2>
+  <p>
+    Club educativo sin fines de lucro enfocado en aprendizaje práctico,
+    competencias nacionales y trabajo en equipo.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#history" class="btn-primary">Ver Historia</a>
+    <a href="#about" class="btn-secondary">Conócenos</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">¿Quiénes somos?</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🤖 Robótica práctica</h3>
+      <p>Arduino, mBot, Python y proyectos reales.</p>
     </div>
+    <div class="card">
+      <h3>👨‍👩‍👦 Comunidad</h3>
+      <p>Padres, alumnos y mentores colaborando juntos.</p>
+    </div>
+    <div class="card">
+      <h3>🏆 Competencias</h3>
+      <p>MakeX, Robomatix y eventos nacionales.</p>
+    </div>
+  </div>
+</section>
 
-    <div class="container">
-        <div class="section" id="home">
-            <h2>¡Te esperamos!</h2>
-            <p>¡Hola!</p>
-            <p>Estamos emocionados de invitarte nuevamente al curso online de Robotica76. Prepárate para seguir explorando el fascinante mundo de la robótica, aprender nuevas habilidades y conectar con una comunidad apasionada.</p>
+<section id="history">
+  <h2 class="section-title">Historia y Logros 📈</h2>
+  <div class="timeline">
+    <div class="timeline-event">
+      <h4>2023–2024</h4>
+      <p>Talleres, pláticas y primer seguidor de línea.</p>
+    </div>
+    <div class="timeline-event">
+      <h4>2025</h4>
+      <p>🏆 MakeX RoverX & Ultimate Challenge.</p>
+    </div>
+    <div class="timeline-event">
+      <h4>Febrero 2026</h4>
+      <p>Robomatix – 4.º lugar laberinto.</p>
+    </div>
+  </div>
 
-            <h3>¿Cómo unirte?</h3>
-            <p>Es muy sencillo. Haz clic en el siguiente enlace para reincorporarte al curso y continuar tu aprendizaje:</p>
-            <p><a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjlkMjZiOWItYjUwYi00YTgwLTg1OGEtM2ExYzc0NTllNzc4%40thread.v2/0?context=%7b%22Tid%22%3a%22ceb177bf-013b-49ab-8a9c-4abce32afc1e%22%2c%22Oid%22%3a%22e1308f86-b0c8-478f-8e8c-5c889a439261%22%7d">Haz clic aquí para acceder a la clase de Robotica76</a></p>
+  <p style="margin-top:30px;">
+    <strong>Nota:</strong> Los robots y materiales han sido adquiridos gracias al apoyo
+    de padres de familia, material propio y compras por iniciativa personal.
+  </p>
+</section>
 
-            <h3>⏰ ¡Horario del Curso!</h3>
-            <p>¡Prepárate para sumergirte en el mundo de la robótica! Hemos establecido un horario que se adapta a tu semana, permitiéndote aprender y aplicar nuevos conocimientos de forma consistente.</p>
-            <p>Nuestras sesiones en vivo serán:</p>
-            <p>(Empezamos martes 24 de Junio de 2025)</p>
-            <p><strong>Martes y Jueves a las 5:30 PM</strong></p>
-            <p>Asegúrate de marcar estas horas en tu calendario. ¡Te esperamos puntualmente para cada sesión llena de aprendizaje y diversión!</p>
-            <p>¡No te quedes atrás! Tu aventura en la robótica te espera.</p>
-            <p>Saludos,</p>
-            <p>El equipo de Robotica76</p>
-        </div>
+<!-- ✅ FACEBOOK SECTION -->
+<section id="facebook">
+  <h2 class="section-title">Síguenos en Facebook 📘</h2>
 
-        <div class="section" id="about">
-            <h2>Quienes somos? 👋</h2>
-            <p>🙋‍♀️ El club de robotica ROBOTICA76, es una organizacion sin fines de lucro que organizados buscamos ayudar, colaborar y consolidar espacio de formacion en robotica, mini-robotica y conferencias.
-            </p>
-            <p style="text-align: center;"><img src=https://github.com/user-attachments/assets/cff3f111-06d5-4b9c-9f04-4e58ca8b09aa width="600" height="450"></p>
-        </div>
-
-        <div class="section" id="services">
-            <h2>MISION 👓</h2>
-            <p>✔️ Formar un grupo de trabajo unido para la capacitación y el fomento de la mini-robótica y robótica en el instituto, así como realizar proyectos de investigación e innovación que nos ayude a desarrollar nuestro potencial.</p>
-        </div>
-
-        <div class="section">
-            <h2>VISION 🔭</h2>
-            <p>✔️ Fomentar el desarrollo tecnológico de la localidad con la participacion activa de los jovenes y escuelas locales, donde se demuestre el liderazgo y la iniciativa de nuestros equipos obteniendo destacados reconocimientos.</p>
-        </div>
-
-        <div class="section" id="objectives">
-            <h2>OBJETIVOS 🎯</h2>
-            <ul>
-                <li>✔️ Consolidar una selección de Robótica representativa y competitiva.</li>
-                <li>✔️ Desarrollar el conocimiento tecnologico de los estudiantes.</li>
-                <li>✔️ Desarrollar proyectos de innovación tecnológica para representar a nuestra Institución en competencias.</li>
-                <li>✔️ Crear grupos de aprendizaje colectivo para el desarrollo del conocimiento.</li>
-                <li>✔️ Crear otros Club´s de Robótica en otras instituciones educativas.</li>
-            </ul>
-        </div>
-
-        <!-- <div class="section" id="history">
-            <h2>Nuestra Historia y Progreso 📈</h2>
-            <p>Hecha un vistazo en nuestros eventos y progreso!</p>
-            <div class="timeline">
-                <div class="timeline-event">
-                    <h3> - June 2023: Para que sirven las matematicas?</h3>
-                    <p>Iniciamos con una inspiradora charla motivacional titulada "¿Para qué sirven las matemáticas?" para despertar el interés en las aplicaciones prácticas de las matemáticas en la robótica..</p>
-                </div>
-                <div class="timeline-event">
-                    <h3> - April 2024: Para que sirven las matematicas? Vista general a las aplicaciones de ingenieria. </h3>
-                    <p> Por segunda vez, se impartio la inspiradora charla motivacional "¿Para qué sirven las matemáticas?"! Esta presentación está diseñada para encender el interés de los participantes, mostrándoles las aplicaciones prácticas y fascinantes de las matemáticas en el campo de la robótica.</p>
-                </div>
-                <div class="timeline-event">
-                    <h3> - Junio 2024: Primer taller de Robotica. </h3>
-                    <p> En junio de 2024, marcamos un hito emocionante: lanzamos oficialmente nuestro primer taller de robótica. Este evento tuvo lugar en las instalaciones de la Escuela Secundaria 76, donde los participantes tuvieron la oportunidad de sumergirse en el mundo de la robótica.
-                        Para esta primera experiencia, utilizamos robots genéricos y nos enfocamos en la programación con Arduino. Los estudiantes trabajaron en el desarrollo de su primer robot, que se centró en la fascinante tarea del seguimiento de líneas. Fue un comienzo inspirador para todos los involucrados.</p>
-                </div>
-            </div>
-        </div> -->
-        <div class="section" id="history">
-    <h2>Nuestra Historia y Progreso 📈</h2>
-    <p>
-        ¡Da un vistazo a los eventos más importantes y al crecimiento continuo de nuestro proyecto!
-        Este avance ha sido posible gracias al esfuerzo conjunto de estudiantes,
-        padres de familia y el uso responsable de recursos propios.
+  <div class="facebook-card">
+    <p style="text-align:center; color:var(--text-muted); max-width:600px;">
+      Aquí compartimos eventos, competencias, avances del equipo y logros de nuestros estudiantes.
     </p>
 
-    <div class="timeline">
-
-        <div class="timeline-event">
-            <h3>Junio 2023 – ¿Para qué sirven las matemáticas?</h3>
-            <p>
-                Iniciamos este proyecto con la charla motivacional
-                <strong>“¿Para qué sirven las matemáticas?”</strong>, enfocada en despertar el interés de los estudiantes
-                al mostrar la aplicación práctica de las matemáticas en la robótica y la tecnología.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Junio 2024 – ¿Para qué sirven las matemáticas? (Segunda edición)</h3>
-            <p>
-                Se impartió por segunda ocasión la charla motivacional,
-                ahora con un enfoque hacia las aplicaciones de la ingeniería y la robótica,
-                fortaleciendo la motivación y curiosidad de los participantes.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Junio 2024 – Primer taller de robótica: Seguidor de línea</h3>
-            <p>
-                Se llevó a cabo nuestro <strong>primer taller formal de robótica</strong> en la
-                Escuela Secundaria 76. Los alumnos construyeron y programaron
-                un robot seguidor de línea utilizando Arduino.
-                <br><br>
-                El equipo utilizado fue posible gracias a material ya disponible en casa
-                y a adquisiciones realizadas por iniciativa propia.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Agosto 2024 – Curso introductorio de Python</h3>
-            <p>
-                Se impartió un <strong>curso introductorio de Python</strong>,
-                donde los estudiantes aprendieron los fundamentos del lenguaje y su uso
-                en proyectos de programación, automatización y robótica,
-                incluyendo ejemplos prácticos con Alexa.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Septiembre 2024 – Donación de robots mBot v1</h3>
-            <p>
-                Se recibieron <strong>5 robots mBot v1</strong>,
-                adquiridos gracias a recursos propios y apoyo familiar,
-                lo que permitió elevar el nivel técnico del equipo y prepararse para competencias.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Noviembre 2024 – MakeX 2024: mBot Rescue</h3>
-            <p>
-                Participamos en <strong>MakeX 2024</strong>, categoría <strong>mBot Rescue</strong>,
-                obteniendo un destacado <strong>4.º lugar a nivel nacional</strong>,
-                reflejo del avance técnico y trabajo en equipo.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Enero 2025 – Adquisición de robot mBot v2 y kit Rover</h3>
-            <p>
-                Gracias a la <strong>iniciativa y apoyo de los padres de familia</strong>,
-                se adquirió <strong>1 robot mBot v2</strong> y un <strong>kit Rover</strong>,
-                fortaleciendo las capacidades del equipo para nuevos retos.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Mayo 2025 – Competencia RoverX MakeX</h3>
-            <p>
-                El equipo participó en <strong>RoverX MakeX</strong>,
-                logrando resultados sobresalientes al obtener el
-                <strong>1.º, 2.º y 3.º lugar</strong>,
-                demostrando un crecimiento técnico acelerado.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Junio 2025 – Adquisición del kit Ultimate Challenge</h3>
-            <p>
-                Se logró la compra del <strong>kit Ultimate Challenge</strong>
-                a <strong>mitad de precio</strong>, gracias al uso inteligente de recursos
-                y gestiones realizadas por iniciativa propia,
-                permitiendo seguir compitiendo a mayor nivel.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Noviembre 2025 – MakeX: Ultimate Challenge y RoverX</h3>
-            <p>
-                En <strong>MakeX 2025</strong>, el equipo obtuvo el
-                <strong>4.º lugar en Ultimate Challenge</strong> y
-                <strong>3.º lugar en RoverX</strong>,
-                consolidándose como un equipo competitivo a nivel nacional.
-            </p>
-        </div>
-
-        <div class="timeline-event">
-            <h3>Febrero 2026 – Participación en Robomatix</h3>
-            <p>
-                Participamos en la competencia <strong>Robomatix</strong> en las categorías de
-                <strong>robot laberinto, seguidor de línea velocista y todo terreno</strong>.
-                En la prueba de laberinto se obtuvo un <strong>4.º lugar</strong>,
-                reafirmando la constancia y evolución técnica del equipo.
-            </p>
-        </div>
-
+    <div class="facebook-wrapper">
+      <div class="fb-page"
+        data-href="https://www.facebook.com/Robotica76"
+        data-tabs="timeline"
+        data-width="500"
+        data-height="600"
+        data-small-header="false"
+        data-adapt-container-width="true"
+        data-hide-cover="false"
+        data-show-facepile="true">
+      </div>
     </div>
+  </div>
+</section>
 
-    <p style="margin-top:20px;">
-        <strong>Nota:</strong> Todas las adquisiciones de robots, kits y materiales han sido posibles gracias
-        al apoyo de los <strong>padres de familia</strong>, el uso de <strong>material ya disponible en casa</strong>
-        y <strong>compras realizadas por iniciativa propia</strong>, reafirmando el compromiso comunitario
-        con la educación tecnológica.
-    </p>
-</div>
-``
-<!--         <div class="section" id="carousel">
-            <h2>Our Highlights 🌟</h2>
-            <div class="carousel-container">
-                <input type="radio" name="carousel-radio" id="slide1" class="carousel-radio" checked>
-                <input type="radio" name="carousel-radio" id="slide2" class="carousel-radio">
-                <input type="radio" type="radio" name="carousel-radio" id="slide3" class="carousel-radio">
-                <div class="carousel-track">
-                    <div class="carousel-slide" id="slide-content-1">
-                        <h3>Our Latest Projects</h3>
-                        <p>Explore the innovative robots and solutions our members have built!</p>
-                    </div>
-                    <div class="carousel-slide" id="slide-content-2">
-                        <h3>Meet Our Talented Team</h3>
-                        <p>Learn about the passionate minds behind Robotica76 and their achievements.</p>
-                    </div>
-                    <div class="carousel-slide" id="slide-content-3">
-                        <h3>Upcoming Events & Workshops</h3>
-                        <p>Don't miss out on our next hands-on robotics workshops and competitions.</p>
-                    </div>
-                    </div>
+<footer>
+  © Robotica76 · Educación · Robótica · Comunidad
+</footer>
 
-                <div class="carousel-nav">
-                    <label for="slide1"><div class="carousel-dot"></div></label>
-                    <label for="slide2"><div class="carousel-dot"></div></label>
-                    <label for="slide3"><div class="carousel-dot"></div></label>
-                    </div>
-            </div>
-            <p style="text-align: center; font-size: 0.9em; color: var(--text-dark); margin-top: 20px;">(Click the dots below to navigate the carousel)</p>
-        </div> -->
-
-       
-
-        <div class="section facebook-section" id="facebook-feed">
-            <h2>Connect with Us on Facebook! 🌐</h2>
-            <p>Stay updated with our latest news, events, and robotics adventures by following our Facebook page:</p>
-             <div id="fb-root"></div>
-                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
-                
-                <div class="fb-page"
-                  data-href="https://www.facebook.com/Robotica76"
-                  data-tabs="timeline"
-                  data-width="500"
-                  data-height="500"
-                  data-small-header="false"
-                  data-adapt-container-width="true"
-                  data-hide-cover="false"
-                  data-show-facepile="true">
-                  <blockquote cite="https://www.facebook.com/Robotica76" class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/Robotica76">Robotica76</a>
-                  </blockquote>
-                </div>
-<!--             <p style="font-size: 0.9em; color: var(--text-dark); margin-top: 20px;">
-                *(Note: The Facebook feed requires an internet connection and JavaScript to load. Some browser extensions might block it.)*
-            </p> -->
-        </div>
-
-    </div>
-
-    <div class="robot-buddy"></div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menuToggle');
-            const mobileNav = document.getElementById('mobileNav');
-            const navLinks = mobileNav.querySelectorAll('a'); // Get all links in mobile nav
-
-            menuToggle.addEventListener('click', () => {
-                menuToggle.classList.toggle('active');
-                mobileNav.classList.toggle('active');
-            });
-
-            // Close mobile menu when a link is clicked
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.classList.remove('active');
-                    mobileNav.classList.remove('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
