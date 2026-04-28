@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Robotica76 – Club de Robótica</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap
 
 <style>
 :root {
@@ -14,8 +14,6 @@
   --text-main: #1f2937;
   --text-muted: #6b7280;
   --primary: #2563eb;
-  --secondary: #10b981;
-  --accent: #f59e0b;
   --border-soft: #e5e7eb;
 }
 
@@ -26,17 +24,16 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--bg-main);
   color: var(--text-main);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header {
   position: sticky;
   top: 0;
   background: #ffffffcc;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-soft);
-  z-index: 100;
 }
 
 nav {
@@ -49,18 +46,17 @@ nav {
 }
 
 nav h1 {
+  color: var(--primary);
   font-size: 1.3rem;
   margin: 0;
-  font-weight: 700;
-  color: var(--primary);
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 24px;
-  padding: 0;
+  gap: 22px;
   margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -69,50 +65,7 @@ nav a {
   font-weight: 500;
 }
 
-nav a:hover { color: var(--primary); }
-
-/* ===== HERO ===== */
-.hero {
-  max-width: 1200px;
-  margin: auto;
-  padding: 90px 20px 70px;
-}
-
-.hero h2 {
-  font-size: 2.6rem;
-  line-height: 1.2;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  max-width: 650px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  margin-top: 20px;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.btn-secondary {
-  border: 1px solid var(--border-soft);
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--text-main);
-}
-
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section {
   max-width: 1200px;
   margin: auto;
@@ -121,36 +74,32 @@ section {
 
 .section-title {
   font-size: 1.9rem;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
-/* ===== CARDS ===== */
+/* CARDS */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
 .grid {
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.card {
-  background: var(--bg-card);
-  border-radius: 12px;
-  padding: 24px;
-  border: 1px solid var(--border-soft);
-}
-
-.card h3 {
-  margin-top: 0;
-  color: var(--primary);
-}
-
-/* ===== TIMELINE ===== */
+/* TIMELINE */
 .timeline {
   border-left: 3px solid var(--primary);
   padding-left: 30px;
 }
 
 .timeline-event {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .timeline-event h4 {
@@ -163,23 +112,16 @@ section {
   color: var(--text-muted);
 }
 
-/* ===== FACEBOOK ===== */
+/* FACEBOOK */
 .facebook-card {
-  background: var(--bg-card);
-  border-radius: 14px;
-  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
   border: 1px solid var(--border-soft);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
-.facebook-wrapper {
-  width: 100%;
-  max-width: 520px;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   background: white;
   border-top: 1px solid var(--border-soft);
@@ -188,9 +130,7 @@ footer {
   color: var(--text-muted);
 }
 
-/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .hero h2 { font-size: 2rem; }
   nav ul { display: none; }
 }
 </style>
@@ -198,102 +138,249 @@ footer {
 
 <body>
 
-<!-- Facebook SDK -->
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
- src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
+https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0script>
 
 <header>
   <nav>
     <h1>Robotica76</h1>
     <ul>
-      <li><a href="#about">Nosotros</a></li>
-      <li><a href="#history">Historia</a></li>
-      <li><a href="#facebook">Facebook</a></li>
+      <li>#homeInicio</a></li>
+      <li>#aboutNosotros</a></li>
+      <li>#missionMisión & Visión</a></li>
+      <li>#objectivesObjetivos</a></li>
+      <li>#historyHistoria</a></li>
+      <li>#facebookFacebook</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero">
-  <h2>Formando jóvenes en robótica, programación y tecnología 🤖</h2>
-  <p>
-    Club educativo sin fines de lucro enfocado en aprendizaje práctico,
-    competencias nacionales y trabajo en equipo.
-  </p>
+<section id="home">
+  <h2 class="section-title">¡Te esperamos! 🤖</h2>
 
-  <div class="hero-actions">
-    <a href="#history" class="btn-primary">Ver Historia</a>
-    <a href="#about" class="btn-secondary">Conócenos</a>
+  <div class="card">
+    <p>
+      Estamos emocionados de invitarte nuevamente al curso online de <strong>Robotica76</strong>.
+      Prepárate para seguir explorando el fascinante mundo de la robótica, aprender nuevas habilidades
+      y conectar con una comunidad apasionada.
+    </p>
+
+    <p>
+      <strong>Horario:</strong><br>
+      Martes y Jueves a las 5:30 PM<br>
+      (Inicio: martes 24 de junio de 2025)
+    </p>
+
+    <p>
+      <a href="https://teams.microsoft.com/" target="_blank">
+        👉 Acceso a la clase en Microsoft Teams
+      </a>
+    </p>
   </div>
 </section>
 
 <section id="about">
-  <h2 class="section-title">¿Quiénes somos?</h2>
+  <h2 class="section-title">¿Quiénes somos? 👋</h2>
+  <div class="card">
+    <p>
+      El club de robótica <strong>ROBOTICA76</strong> es una organización sin fines de lucro
+      que busca ayudar, colaborar y consolidar espacios de formación en robótica,
+      mini‑robótica y conferencias tecnológicas.
+    </p>
+  </div>
+</section>
+
+<section id="mission">
+  <h2 class="section-title">Misión & Visión</h2>
   <div class="grid">
     <div class="card">
-      <h3>🤖 Robótica práctica</h3>
-      <p>Arduino, mBot, Python y proyectos reales.</p>
+      <h3>🎯 Misión</h3>
+      <p>
+        Formar un grupo unido para la capacitación y fomento de la robótica,
+        desarrollando proyectos de investigación e innovación tecnológica.
+      </p>
     </div>
     <div class="card">
-      <h3>👨‍👩‍👦 Comunidad</h3>
-      <p>Padres, alumnos y mentores colaborando juntos.</p>
+      <h3>🔭 Visión</h3>
+      <p>
+        Impulsar el desarrollo tecnológico local mediante la participación activa
+        de jóvenes y escuelas, logrando reconocimientos destacados.
+      </p>
     </div>
-    <div class="card">
-      <h3>🏆 Competencias</h3>
-      <p>MakeX, Robomatix y eventos nacionales.</p>
-    </div>
+  </div>
+</section>
+
+<section id="objectives">
+  <h2 class="section-title">Objetivos 🎯</h2>
+  <div class="card">
+    <ul>
+      <li>✔️ Consolidar una selección de robótica competitiva.</li>
+      <li>✔️ Desarrollar el conocimiento tecnológico de los estudiantes.</li>
+      <li>✔️ Crear proyectos de innovación para competencias.</li>
+      <li>✔️ Formar grupos de aprendizaje colectivo.</li>
+      <li>✔️ Impulsar la creación de otros clubes de robótica.</li>
+    </ul>
   </div>
 </section>
 
 <section id="history">
-  <h2 class="section-title">Historia y Logros 📈</h2>
-  <div class="timeline">
-    <div class="timeline-event">
-      <h4>2023–2024</h4>
-      <p>Talleres, pláticas y primer seguidor de línea.</p>
-    </div>
-    <div class="timeline-event">
-      <h4>2025</h4>
-      <p>🏆 MakeX RoverX & Ultimate Challenge.</p>
-    </div>
-    <div class="timeline-event">
-      <h4>Febrero 2026</h4>
-      <p>Robomatix – 4.º lugar laberinto.</p>
-    </div>
-  </div>
+  <h2 class="section-title">Nuestra Historia y Progreso 📈</h2>
 
-  <p style="margin-top:30px;">
-    <strong>Nota:</strong> Los robots y materiales han sido adquiridos gracias al apoyo
-    de padres de familia, material propio y compras por iniciativa personal.
-  </p>
+  <div class="card">
+    <p>
+      ¡Da un vistazo a los eventos más importantes y al crecimiento continuo de nuestro proyecto!
+      Este avance ha sido posible gracias al esfuerzo conjunto de estudiantes,
+      padres de familia y el uso responsable de recursos propios.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-event">
+        <h4>Junio 2023 – ¿Para qué sirven las matemáticas?</h4>
+        <p>
+          Iniciamos este proyecto con la charla motivacional
+          <strong>“¿Para qué sirven las matemáticas?”</strong>, enfocada en despertar
+          el interés de los estudiantes mostrando la aplicación práctica de
+          las matemáticas en la robótica y la tecnología.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Junio 2024 – ¿Para qué sirven las matemáticas? (Segunda edición)</h4>
+        <p>
+          Se impartió por segunda ocasión la charla motivacional,
+          ahora con un enfoque hacia las aplicaciones de la ingeniería
+          y la robótica, fortaleciendo la motivación y curiosidad de los participantes.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Junio 2024 – Primer taller de robótica: Seguidor de línea</h4>
+        <p>
+          Se llevó a cabo el <strong>primer taller formal de robótica</strong>
+          en la Escuela Secundaria 76. Los alumnos construyeron y programaron
+          un robot seguidor de línea utilizando Arduino.
+          <br><br>
+          El equipo utilizado fue posible gracias a material ya disponible en casa
+          y adquisiciones realizadas por iniciativa propia.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Agosto 2024 – Curso introductorio de Python</h4>
+        <p>
+          Se impartió un curso introductorio de <strong>Python</strong>,
+          donde los estudiantes aprendieron los fundamentos del lenguaje
+          y su aplicación en proyectos de programación, automatización
+          y robótica, incluyendo ejemplos prácticos con Alexa.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Septiembre 2024 – Donación de robots mBot v1</h4>
+        <p>
+          Se recibieron <strong>5 robots mBot v1</strong>, adquiridos gracias
+          a recursos propios y apoyo familiar, lo que permitió elevar
+          el nivel técnico del equipo y prepararse para competencias.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Noviembre 2024 – MakeX 2024: mBot Rescue</h4>
+        <p>
+          Participamos en <strong>MakeX 2024</strong>, categoría
+          <strong>mBot Rescue</strong>, obteniendo un
+          <strong>4.º lugar a nivel nacional</strong>, reflejo del
+          crecimiento técnico del equipo.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Enero 2025 – Adquisición de robots y kits Rover</h4>
+        <p>
+          Gracias a la iniciativa y apoyo de los
+          <strong>padres de familia</strong>, se adquirieron:
+          <br>
+          • <strong>2 robots mBot v2</strong><br>
+          • <strong>2 kits Rover</strong><br>
+          fortaleciendo las capacidades del equipo para competencias
+          de mayor nivel.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Mayo 2025 – Competencia RoverX MakeX</h4>
+        <p>
+          El equipo participó en <strong>RoverX MakeX</strong>,
+          logrando resultados sobresalientes al obtener el
+          <strong>1.º, 2.º y 3.º lugar</strong>, demostrando un
+          avance técnico acelerado y consistente.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Junio 2025 – Adquisición del kit Ultimate Challenge</h4>
+        <p>
+          Se logró la compra del <strong>kit Ultimate Challenge</strong>
+          a <strong>mitad de precio</strong>, gracias al uso inteligente
+          de recursos y gestiones realizadas por iniciativa propia,
+          permitiendo seguir compitiendo a mayor nivel.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Noviembre 2025 – MakeX: Ultimate Challenge y RoverX</h4>
+        <p>
+          En <strong>MakeX 2025</strong>, el equipo obtuvo:
+          <br>
+          • <strong>4.º lugar en Ultimate Challenge</strong><br>
+          • <strong>3.º lugar en RoverX</strong><br>
+          consolidando su presencia como equipo competitivo
+          a nivel nacional.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <h4>Febrero 2026 – Participación en Robomatix</h4>
+        <p>
+          Participación en <strong>Robomatix</strong> en las categorías:
+          <strong>robot laberinto</strong>,
+          <strong>seguidor de línea velocista</strong> y
+          <strong>todo terreno</strong>.
+          Se obtuvo un <strong>4.º lugar en la prueba de laberinto</strong>,
+          reafirmando la evolución técnica del equipo.
+        </p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:24px;">
+      <strong>Nota:</strong> Todas las adquisiciones de robots, kits y materiales
+      han sido posibles gracias al apoyo de los
+      <strong>padres de familia</strong>, el uso de
+      <strong>material ya disponible en casa</strong> y
+      <strong>compras realizadas por iniciativa propia</strong>,
+      reflejando el compromiso comunitario con la educación tecnológica.
+    </p>
+  </div>
 </section>
 
-<!-- ✅ FACEBOOK SECTION -->
 <section id="facebook">
   <h2 class="section-title">Síguenos en Facebook 📘</h2>
 
   <div class="facebook-card">
-    <p style="text-align:center; color:var(--text-muted); max-width:600px;">
-      Aquí compartimos eventos, competencias, avances del equipo y logros de nuestros estudiantes.
-    </p>
-
-    <div class="facebook-wrapper">
-      <div class="fb-page"
-        data-href="https://www.facebook.com/Robotica76"
-        data-tabs="timeline"
-        data-width="500"
-        data-height="600"
-        data-small-header="false"
-        data-adapt-container-width="true"
-        data-hide-cover="false"
-        data-show-facepile="true">
-      </div>
+    <div class="fb-page"
+      data-href="https://www.facebook.com/Robotica76"
+      data-tabs="timeline"
+      data-width="500"
+      data-height="600"
+      data-adapt-container-width="true">
     </div>
   </div>
 </section>
 
 <footer>
-  © Robotica76 · Educación · Robótica · Comunidad
+  © Robotica76 · Robótica · Educación · Comunidad
 </footer>
 
 </body>
