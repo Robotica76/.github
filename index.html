@@ -22,30 +22,35 @@
 
 * { box-sizing: border-box; }
 
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: var(--bg-main);
   color: var(--text-main);
   line-height: 1.8;
+
+  position: relative;   /* ✅ CREATE STACKING CONTEXT */
+  z-index: 0;
 }
+
       
+
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   background-image: url("assets/Screenshot 2026-04-28 094043.png");
   background-repeat: repeat;
   background-size: 260px 260px;
 
-  opacity: 0.06;              /* KEY: subtle */
+  opacity: 0.06;
   pointer-events: none;
-  z-index: -1;
+
+  z-index: -1; /* ✅ now works because body has z-index:0 */
 }
+
 
 
 /* HEADER */
