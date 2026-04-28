@@ -158,6 +158,53 @@ footer {
 
 @media (max-width: 768px) {
   nav ul { display: none; }
+
+      .gh-repo-title {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.gh-meta {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.gh-pill {
+  padding: 4px 10px;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.gh-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.gh-link:hover { text-decoration: underline; }
+
+.gh-contrib {
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.gh-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+}
+
 }
 </style>
 </head>
@@ -397,27 +444,27 @@ footer {
   <h2 class="section-title">Nuestro GitHub 💻</h2>
 
   <div class="card">
-    <p>
-      En nuestro GitHub compartimos proyectos, ejemplos de código y material
-      educativo desarrollado por el club como parte del aprendizaje en robótica
-      y programación.
+    <p style="color: var(--text-muted); margin-top:0;">
+      Aquí puedes ver nuestros repositorios públicos más recientes (proyectos, materiales y código del club).
+      Fuente: GitHub oficial del club.
     </p>
 
-    <ul>
-      <li>🤖 Proyectos de robótica (mBot, Arduino, Rover)</li>
-      <li>🐍 Ejercicios y ejemplos en Python</li>
-      <li>📊 Código de pruebas, lógica y control</li>
-      <li>📚 Documentación para alumnos</li>
-    </ul>
+    <div id="gh-status" style="color: var(--text-muted);">Cargando repositorios…</div>
 
-    <p style="margin-top:16px;">
-      👉
-      <a href="https://github.com/TU_USUARIO_O_ORG" 
-         target="_blank"
-         rel="noopener noreferrer"
-         style="font-weight:600;">
-        Visitar el GitHub oficial de Robotica76
+    <div id="gh-grid" class="grid" style="margin-top:16px;"></div>
+
+    <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+      <a class="btn-secondary" href="https://github.com/Robotica76" target="_blank" rel="noopener">
+        Ver GitHub completo
       </a>
+
+      <button class="btn-secondary" id="gh-toggle-contrib" type="button">
+        Mostrar contribuidores (primeros repos)
+      </button>
+    </div>
+
+    <p style="margin-top:14px; color: var(--text-muted); font-size: 0.95em;">
+      Nota: GitHub puede ocultar la lista de miembros públicos del club. En ese caso, mostramos contribuidores por repositorio (si están disponibles).
     </p>
   </div>
 </section>
@@ -447,6 +494,180 @@ footer {
 <footer>
   © Robotica76 · Robótica · Educación · Comunidad
 </footer>
+
+<script>
+(() => {
+  const ORG = "Robotica76";
+  const API_REPOS = `https://api.github.com/orgs/${ORG}/repos?per_page=12&sort=updated`;
+  const CACHE_KEY = `gh_repos_${ORG}_v1`;
+  const CACHE_HOURS = 6;
+
+  const statusEl = document.getElementById("gh-status");
+  const gridEl = document.getElementById("gh-grid");
+  const btnContrib = document.getElementById("gh-toggle-contrib");
+
+  let repos = [];
+  let contribEnabled = false;
+
+  function fmtDate(iso) {
+    try {
+      return new Date(iso).toLocaleDateString("es-MX", { year:"numeric", month:"short", day:"2-digit" });
+    } catch {
+      return iso;
+    }
+  }
+
+  function setStatus(msg) {
+    if (statusEl) statusEl.textContent = msg;
+  }
+
+  function readCache() {
+    try {
+      const raw = localStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      const obj = JSON.parse(raw);
+      const ageMs = Date.now() - obj.ts;
+      if (ageMs > CACHE_HOURS * 3600 * 1000) return null;
+      return obj.data;
+    } catch {
+      return null;
+    }
+  }
+
+  function writeCache(data) {
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+    } catch {}
+  }
+
+  function repoCardHTML(r) {
+    const desc = (r.description || "Sin descripción.").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+    const lang = r.language ? `<span class="gh-pill">🧩 ${r.language}</span>` : "";
+    const updated = r.updated_at ? `<span class="gh-pill">🕒 ${fmtDate(r.updated_at)}</span>` : "";
+    const stars = (typeof r.stargazers_count === "number") ? `<span class="gh-pill">⭐ ${r.stargazers_count}</span>` : "";
+
+    return `
+      <div class="card" data-repo="${r.name}">
+        <div class="gh-repo-title">
+          <a class="gh-link" href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a>
+          <span style="color:var(--text-muted); font-size:0.9em;">${r.private ? "Privado" : "Público"}</span>
+        </div>
+
+        <p style="color:var(--text-muted); margin:10px 0 0;">${desc}</p>
+
+        <div class="gh-meta">
+          ${lang}
+          ${stars}
+          ${updated}
+        </div>
+
+        <div class="gh-contrib" id="contrib-${r.name}" style="display:none;"></div>
+      </div>
+    `;
+  }
+
+  function renderRepos() {
+    if (!gridEl) return;
+    gridEl.innerHTML = repos.map(repoCardHTML).join("");
+    setStatus(repos.length ? "" : "No se encontraron repos públicos.");
+  }
+
+  async function fetchJSON(url) {
+    const res = await fetch(url, {
+      headers: { "Accept": "application/vnd.github+json" }
+    });
+
+    // Rate limit friendly message
+    if (res.status === 403) {
+      const remaining = res.headers.get("x-ratelimit-remaining");
+      if (remaining === "0") {
+        throw new Error("rate_limit");
+      }
+    }
+    if (!res.ok) throw new Error(`http_${res.status}`);
+    return await res.json();
+  }
+
+  async function loadRepos() {
+    setStatus("Cargando repositorios…");
+    const cached = readCache();
+    if (cached) {
+      repos = cached;
+      renderRepos();
+      return;
+    }
+
+    try {
+      const data = await fetchJSON(API_REPOS);
+      repos = Array.isArray(data) ? data : [];
+      writeCache(repos);
+      renderRepos();
+    } catch (e) {
+      if (e.message === "rate_limit") {
+        setStatus("GitHub limitó temporalmente las consultas. Intenta más tarde o abre el GitHub completo.");
+      } else {
+        setStatus("No se pudo cargar GitHub automáticamente. Revisa tu conexión o abre el GitHub completo.");
+      }
+    }
+  }
+
+  async function loadContributorsForRepo(repo) {
+    // Limitamos para evitar demasiadas llamadas (API rate limit)
+    const target = document.getElementById(`contrib-${repo.name}`);
+    if (!target) return;
+
+    target.style.display = "flex";
+    target.innerHTML = `<span class="gh-pill">👥 Cargando contribuidores…</span>`;
+
+    try {
+      const url = repo.contributors_url + "?per_page=5";
+      const users = await fetchJSON(url);
+
+      if (!Array.isArray(users) || users.length === 0) {
+        target.innerHTML = `<span class="gh-pill">👥 Sin datos públicos</span>`;
+        return;
+      }
+
+      const avatars = users.slice(0, 5).map(u => `
+        <a href="${u.html_url}" target="_blank" rel="noopener" title="${u.login}">
+          <img class="gh-avatar" src="${u.avatar_url}" alt="${u.login}">
+        </a>
+      `).join("");
+
+      target.innerHTML = `<span class="gh-pill">👥 Contribuidores</span>${avatars}`;
+    } catch {
+      target.innerHTML = `<span class="gh-pill">👥 No disponible</span>`;
+    }
+  }
+
+  async function toggleContributors() {
+    contribEnabled = !contribEnabled;
+    btnContrib.textContent = contribEnabled
+      ? "Ocultar contribuidores"
+      : "Mostrar contribuidores (primeros repos)";
+
+    // Mostrar/ocultar contenedores
+    repos.forEach(r => {
+      const el = document.getElementById(`contrib-${r.name}`);
+      if (el) el.style.display = contribEnabled ? "flex" : "none";
+    });
+
+    if (!contribEnabled) return;
+
+    // Cargar contribuidores solo para los primeros 3 repos (para evitar rate limit)
+    const top = repos.slice(0, 3);
+    for (const r of top) {
+      await loadContributorsForRepo(r);
+    }
+  }
+
+  if (btnContrib) {
+    btnContrib.addEventListener("click", toggleContributors);
+  }
+
+  loadRepos();
+})();
+</script>
 
 </body>
 
