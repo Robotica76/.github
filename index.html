@@ -163,9 +163,7 @@ footer {
 </head>
 
 <body>
-
 <div id="fb-root"></div>
-
 <script async defer crossorigin="anonymous"
   src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0">
 </script>
@@ -399,12 +397,20 @@ footer {
   <h2 class="section-title">Síguenos en Facebook 📘</h2>
 
   <div class="facebook-card">
-    <div class="fb-page"
-      data-href="https://www.facebook.com/Robotica76"
-      data-tabs="timeline"
-      data-width="500"
-      data-height="600"
-      data-adapt-container-width="true">
+    <p style="color:#6b7280;max-width:600px;margin:auto;">
+      Compartimos eventos, avances, competencias y logros del equipo.
+    </p>
+
+    <div style="margin-top:20px;">
+      <div class="fb-page"
+        data-href="https://www.facebook.com/Robotica76"
+        data-tabs="timeline"
+        data-width="500"
+        data-height="600"
+        data-adapt-container-width="true"
+        data-hide-cover="false"
+        data-show-facepile="true">
+      </div>
     </div>
   </div>
 </section>
@@ -414,4 +420,14 @@ footer {
 </footer>
 
 </body>
+
+      
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.FB) {
+      FB.XFBML.parse();
+    }
+  });
+</script>
+
 </html>
