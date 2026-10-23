@@ -90,6 +90,69 @@ Ejemplo
 
 ---
 
+## 🏆 Logros destacados
+
+| 📅 Fecha | 🤖 Competencia | 🥇 Resultado nacional |
+|---|---|---|
+| Nov 2024 | MakeX 2024 · mBot Rescue | **4.º lugar nacional** |
+| May 2025 | RoverX MakeX | 🥇 **1.º**, 🥈 **2.º** y 🥉 **3.º lugar nacional** |
+| Nov 2025 | MakeX 2025 · Ultimate Challenge | **4.º lugar nacional** |
+| Nov 2025 | MakeX 2025 · RoverX | 🥉 **3.º lugar nacional** |
+| Feb 2026 | Robomatix · robot laberinto | **4.º lugar nacional** |
+
+> [!TIP]
+> ### 🚀 ¡Estamos en preparación!
+> Actualmente nos preparamos para volver a competir en:
+>
+> - 🤖 **RoverX**
+> - ⚡ **Challenge Storm Breaker** (antes llamado *Ultimate Challenge*)
+>
+> ¡Síguenos para ver cómo avanzamos! 💪
+
+<details>
+<summary>📈 <b>Nuestra historia y progreso</b> (clic para ver la línea de tiempo)</summary>
+
+<br>
+
+| 📅 Fecha | ✨ Qué pasó |
+|---|---|
+| **Jun 2023** | Iniciamos el proyecto con la charla motivacional **“¿Para qué sirven las matemáticas?”**, para mostrar su aplicación en la robótica y la tecnología. |
+| **Jun 2024** | Segunda edición de la charla, ahora enfocada en ingeniería y robótica. |
+| **Jun 2024** | **Primer taller formal de robótica** en la Escuela Secundaria 76: los alumnos construyeron y programaron un robot seguidor de línea con Arduino. |
+| **Ago 2024** | Curso introductorio de **Python**: fundamentos, automatización y robótica, con ejemplos prácticos con Alexa. |
+| **Sep 2024** | Llegaron **5 robots mBot v1**, adquiridos con recursos propios y apoyo familiar. |
+| **Nov 2024** | **MakeX 2024 · mBot Rescue:** 4.º lugar a nivel nacional. |
+| **Ene 2025** | Con apoyo de los padres de familia: **2 robots mBot v2** y **2 kits Rover**. |
+| **May 2025** | **RoverX MakeX:** 1.º, 2.º y 3.º lugar a nivel nacional. |
+| **Jun 2025** | Compra del **kit Ultimate Challenge** a mitad de precio. |
+| **Nov 2025** | **MakeX 2025:** a nivel nacional, 4.º lugar en Ultimate Challenge y 3.º en RoverX. |
+| **Feb 2026** | **Robomatix** (laberinto, seguidor de línea velocista y todo terreno): 4.º lugar nacional en laberinto. |
+
+> [!NOTE]
+> Todo esto ha sido posible gracias al apoyo de los **padres de familia**, el uso de material ya disponible en casa y compras por iniciativa propia: un compromiso de toda la comunidad con la educación tecnológica. 💙
+
+🌐 Más detalles en nuestro [sitio web](https://robotica76.github.io/.github/).
+
+</details>
+
+---
+
+## 🧭 Mapa de aprendizaje
+
+```mermaid
+flowchart LR
+    A[🔰 Fundamentos] --> B[⚡ Electrónica]
+    B --> C[💻 Programación]
+    C --> D[🤖 Mini-robots]
+    D --> E[🏆 Competencias]
+
+    classDef paso fill:#ECECFF,stroke:#9370DB,stroke-width:1px,color:#333333;
+    class A,B,C,D,E paso;
+    linkStyle default stroke:#9370DB,stroke-width:2px;
+```
+
+---
+
 ## 🚀 Misión y Visión
 
 | 👓 Misión | 🔭 Visión |
@@ -152,18 +215,6 @@ En caso de existir un desperfecto, deberan reportarlo inmediatamente al responsa
 🍿 Fun facts - what does your team eat for breakfast?
 🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 -->
-
----
-
-## 🧭 Mapa de aprendizaje
-
-```mermaid
-flowchart LR
-    A[🔰 Fundamentos] --> B[⚡ Electrónica]
-    B --> C[💻 Programación]
-    C --> D[🤖 Mini-robots]
-    D --> E[🏆 Competencias]
-```
 
 ---
 
