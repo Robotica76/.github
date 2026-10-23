@@ -41,7 +41,16 @@ El equipo de Robotica76
 
 ![Image](https://github.com/user-attachments/assets/53b2d852-0522-4dc4-b00f-0619fc4863f9)
 -->
+<!--
+Ejemplo
+<picture>
+<img alt="nombre" src="el link que se hace cuando copias la imagen al issue">
+</picture>
 
+<picture>
+ <img alt="Logo del club" src="https://github.com/user-attachments/assets/7349fe26-1fc1-4af6-bb66-8d878930fcd6">
+<\picture>
+  -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/e5880bb0-cd60-4886-b288-7635a16540a8">
   <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/4edecb15-5860-4ece-9411-0eefe6b31dd5">
