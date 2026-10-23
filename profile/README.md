@@ -51,38 +51,60 @@ Ejemplo
  <img alt="Logo del club" src="https://github.com/user-attachments/assets/7349fe26-1fc1-4af6-bb66-8d878930fcd6">
 <\picture>
   -->
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:2c5364,100:00d4ff&height=200&section=header&text=ROBOTICA76&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Club%20de%20Rob%C3%B3tica%20%7C%20Aprende%20%7C%20Construye%20%7C%20Compite&descAlignY=60&descSize=18" width="100%" alt="Banner Robotica76"/>
+
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=%F0%9F%A4%96+Rob%C3%B3tica+para+j%C3%B3venes;%F0%9F%9B%A0%EF%B8%8F+Aprende+haciendo+proyectos;%F0%9F%8F%86+Rumbo+a+competencias;%F0%9F%8C%8E+Comunidad+abierta+y+sin+fines+de+lucro" alt="Texto animado"/>
+</a>
+
+<br><br>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/e5880bb0-cd60-4886-b288-7635a16540a8">
   <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/4edecb15-5860-4ece-9411-0eefe6b31dd5">
-  <img alt="Logo del club" src="https://github.com/user-attachments/assets/4edecb15-5860-4ece-9411-0eefe6b31dd5">
+  <img alt="Logo del club" src="https://github.com/user-attachments/assets/4edecb15-5860-4ece-9411-0eefe6b31dd5" width="220">
 </picture>
 
-## Quienes somos? 👋
+<br><br>
 
-🙋‍♀️ El club de robotica ROBOTICA76, es una organizacion sin fines de lucro que organizados buscamos ayudar, colaborar y consolidar espacio de formacion en robotica, mini-robotica y conferencias.
-![Image](https://github.com/user-attachments/assets/cff3f111-06d5-4b9c-9f04-4e58ca8b09aa)
-![Image](https://github.com/user-attachments/assets/2a1827fe-e2af-4f13-ab66-ad5de073b756)
+![Sin fines de lucro](https://img.shields.io/badge/Sin%20fines%20de%20lucro-✔-brightgreen?style=for-the-badge)
+![Robótica](https://img.shields.io/badge/Rob%C3%B3tica-00d4ff?style=for-the-badge&logo=raspberrypi&logoColor=white)
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
+</div>
 
-## MISION 👓
+---
 
-✔️ Formar un grupo de trabajo unido para la capacitación y el fomento de la mini-robótica y robótica en el instituto, así como realizar proyectos de investigación e innovación que nos ayuden a desarrollar nuestro potencial.
+## 👋 ¿Quiénes somos?
 
-## VISION 🔭
+**ROBOTICA76** es un club de robótica sin fines de lucro. Nos organizamos para ayudar, colaborar y consolidar un espacio de formación en **robótica, mini-robótica y conferencias**. Aquí no solo se estudia: **se construye**. 🔧⚡
 
-✔️ Fomentar el desarrollo tecnológico de la localidad con la participacion activa de los jovenes y escuelas locales, donde se demuestre el liderazgo y la iniciativa de nuestros equipos obteniendo destacados reconocimientos.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/cff3f111-06d5-4b9c-9f04-4e58ca8b09aa" width="48%"/>
+  <img src="https://github.com/user-attachments/assets/2a1827fe-e2af-4f13-ab66-ad5de073b756" width="48%"/>
+</div>
 
-## OBJETIVOS 🎯
+---
 
-✔️ Consolidar una selección de Robótica representativa y competitiva.
+## 🚀 Misión y Visión
 
-✔️ Desarrollar el conocimiento tecnologico de los estudiantes.
+| 👓 Misión | 🔭 Visión |
+|---|---|
+| Formar un grupo de trabajo unido para la capacitación y el fomento de la mini-robótica y robótica en el instituto, así como realizar proyectos de investigación e innovación que nos ayuden a desarrollar nuestro potencial. | Fomentar el desarrollo tecnológico de la localidad con la participación activa de los jóvenes y escuelas locales, donde se demuestre el liderazgo y la iniciativa de nuestros equipos obteniendo destacados reconocimientos. |
 
-✔️ Desarrollar proyectos de innovación tecnológica para representar a nuestra Institución en competencias.
+---
 
-✔️ Crear grupos de aprendizaje colectivo para el desarrollo del conocimiento.
+## 🎯 Nuestros objetivos
 
-✔️ Crear otros Club´s de Robótica en otras instituciones educativas.
+- 🏆 Consolidar una selección de Robótica representativa y competitiva
+- 🧠 Desarrollar el conocimiento tecnológico de los estudiantes
+- 💡 Desarrollar proyectos de innovación tecnológica para representar a nuestra Institución en competencias
+- 🤝 Crear grupos de aprendizaje colectivo para el desarrollo del conocimiento
+- 🌱 Crear otros Club´s de Robótica en otras instituciones educativas
 
 <!--
 
@@ -131,4 +153,42 @@ En caso de existir un desperfecto, deberan reportarlo inmediatamente al responsa
 🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 -->
 
+---
 
+## 🧭 Mapa de aprendizaje
+
+```mermaid
+flowchart LR
+    A[🔰 Fundamentos] --> B[⚡ Electrónica]
+    B --> C[💻 Programación]
+    C --> D[🤖 Mini-robots]
+    D --> E[🏆 Competencias]
+```
+
+---
+
+<div align="center">
+
+### 📬 Síguenos
+
+<a href="https://www.facebook.com/share/19gCRdGvRg/?mibextid=wwXIfr">
+  <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook de Robotica76"/>
+</a>
+
+<!--
+Instagram (descomentar y poner el link cuando exista la página):
+<a href="LINK_DE_INSTAGRAM">
+  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram de Robotica76"/>
+</a>
+
+Discord (descomentar y poner el link de invitación cuando exista el servidor):
+<a href="LINK_DE_INVITACION_DISCORD">
+  <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord de Robotica76"/>
+</a>
+-->
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d4ff,100:0f2027&height=100&section=footer" width="100%"/>
+
+</div>
