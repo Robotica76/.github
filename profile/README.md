@@ -37,8 +37,16 @@ El equipo de Robotica76
 
 ---
 -->
+<!--
 
 ![Image](https://github.com/user-attachments/assets/53b2d852-0522-4dc4-b00f-0619fc4863f9)
+-->
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/e5880bb0-cd60-4886-b288-7635a16540a8">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/4edecb15-5860-4ece-9411-0eefe6b31dd5">
+  <img alt="Logo del club" src="https://github.com/user-attachments/assets/4edecb15-5860-4ece-9411-0eefe6b31dd5">
+</picture>
 
 ## Quienes somos? 👋
 
